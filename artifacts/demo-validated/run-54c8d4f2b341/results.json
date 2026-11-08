@@ -1,0 +1,46 @@
+{
+  "kind": "running_native_services",
+  "run_id": "run-54c8d4f2b341",
+  "directory": "artifacts\\demo-validated\\run-54c8d4f2b341",
+  "events": 28,
+  "outcomes": [
+    {
+      "scenario": "healthy",
+      "request_id": "req-63723266a141",
+      "status": 200,
+      "result": "ok"
+    },
+    {
+      "scenario": "database_limit",
+      "request_id": "req-e89cfaf55af8",
+      "status": 503,
+      "result": "database pool unavailable"
+    },
+    {
+      "scenario": "retry_storm",
+      "request_id": "req-6c1a9d61913f",
+      "status": 502,
+      "result": "retry budget exhausted"
+    },
+    {
+      "scenario": "config_mismatch",
+      "request_id": "req-b0eda0b7e337",
+      "status": 502,
+      "result": "unsupported schema version"
+    },
+    {
+      "scenario": "slow_timeout",
+      "request_id": "req-1b4569fa31db",
+      "status": 504,
+      "result": "request timeout"
+    }
+  ],
+  "expected_statuses": [
+    200,
+    503,
+    502,
+    502,
+    504
+  ],
+  "passed": true
+}

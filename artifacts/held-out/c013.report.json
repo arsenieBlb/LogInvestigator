@@ -1,0 +1,165 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c013",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-2fe50f8fdb",
+  "run_id": "435b2e6c-6f86-43cf-b095-10f7b2d66cef",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:52.808234+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T14:36:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_54852df6afd127c204c94bf0e821ac0b"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:36:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_20d268f9a94c9abfda6f78bea70bc6e2"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:36:00.080000Z",
+      "text": "worker: configuration mismatch: API schema 2, worker expects schema 1",
+      "evidence_ids": [
+        "ev_0fa96ea55dd5ca62c82e2bd204d07852"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:36:00.120000Z",
+      "text": "api: worker rejected payload version",
+      "evidence_ids": [
+        "ev_78c5e44e9351688f8cb0a6736958a5be"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_54852df6afd127c204c94bf0e821ac0b"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_20d268f9a94c9abfda6f78bea70bc6e2"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "worker logged ERROR: configuration mismatch: API schema 2, worker expects schema 1",
+      "evidence_ids": [
+        "ev_0fa96ea55dd5ca62c82e2bd204d07852"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "api logged ERROR: worker rejected payload version",
+      "evidence_ids": [
+        "ev_78c5e44e9351688f8cb0a6736958a5be"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "A deployment or configuration mismatch between services likely caused failures.",
+      "status": "likely",
+      "supporting_observations": [
+        "obs-3"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_54852df6afd127c204c94bf0e821ac0b",
+      "source_id": "src_0c148a8cd252376eb03c5ce3",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_20d268f9a94c9abfda6f78bea70bc6e2",
+      "source_id": "src_0c148a8cd252376eb03c5ce3",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_0fa96ea55dd5ca62c82e2bd204d07852",
+      "source_id": "src_0c148a8cd252376eb03c5ce3",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_78c5e44e9351688f8cb0a6736958a5be",
+      "source_id": "src_0c148a8cd252376eb03c5ce3",
+      "line_start": 4,
+      "line_end": 4
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Compare service deployment versions, configuration values and schema compatibility."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c013",
+        "request_id": "req-2fe50f8fdb",
+        "limit": 50
+      },
+      "duration_ms": 4.623000015271828,
+      "result_bytes": 2438,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c013",
+        "event_id": "ev_54852df6afd127c204c94bf0e821ac0b",
+        "context": 1
+      },
+      "duration_ms": 1.7725999932736158,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 1.891699997941032,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

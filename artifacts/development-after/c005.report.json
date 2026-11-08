@@ -1,0 +1,226 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c005",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-2a5d3ed84a",
+  "run_id": "256e5921-4c54-4040-bc8d-c0e7cbf3ee8e",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:10.227730+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T12:52:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_70674168429bdba3cef7c4339d001521"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:52:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_6795c774d028a647f81381ca5c1d1981"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:52:00.080000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_08cc42a7c71ecefb5112fc6b3632b0d2"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:52:00.120000Z",
+      "text": "worker: optional telemetry exporter unavailable; business processing unaffected",
+      "evidence_ids": [
+        "ev_5e82536f4147af05dceae7baf3df8820"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:52:00.160000Z",
+      "text": "database: query completed",
+      "evidence_ids": [
+        "ev_6277ffab41cb11f623bbc54987e210d2"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:52:00.200000Z",
+      "text": "worker: job completed",
+      "evidence_ids": [
+        "ev_a99c918127485f01b13c3d43a77d1d87"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:52:00.240000Z",
+      "text": "api: request completed successfully",
+      "evidence_ids": [
+        "ev_4dfdf80cf1afa813fc5cae36c1b37ff3"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_70674168429bdba3cef7c4339d001521"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_6795c774d028a647f81381ca5c1d1981"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_08cc42a7c71ecefb5112fc6b3632b0d2"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "worker logged WARNING: optional telemetry exporter unavailable; business processing unaffected",
+      "evidence_ids": [
+        "ev_5e82536f4147af05dceae7baf3df8820"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "database logged INFO: query completed",
+      "evidence_ids": [
+        "ev_6277ffab41cb11f623bbc54987e210d2"
+      ]
+    },
+    {
+      "id": "obs-6",
+      "text": "worker logged INFO: job completed",
+      "evidence_ids": [
+        "ev_a99c918127485f01b13c3d43a77d1d87"
+      ]
+    },
+    {
+      "id": "obs-7",
+      "text": "api logged INFO: request completed successfully",
+      "evidence_ids": [
+        "ev_4dfdf80cf1afa813fc5cae36c1b37ff3"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "Missing or incomplete evidence prevents establishing the incident cause.",
+      "status": "insufficient_evidence",
+      "supporting_observations": [
+        "obs-4"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_70674168429bdba3cef7c4339d001521",
+      "source_id": "src_6d2d1bf64d1024b1ecd5c003",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_6795c774d028a647f81381ca5c1d1981",
+      "source_id": "src_6d2d1bf64d1024b1ecd5c003",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_08cc42a7c71ecefb5112fc6b3632b0d2",
+      "source_id": "src_6d2d1bf64d1024b1ecd5c003",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_5e82536f4147af05dceae7baf3df8820",
+      "source_id": "src_6d2d1bf64d1024b1ecd5c003",
+      "line_start": 4,
+      "line_end": 4
+    },
+    {
+      "event_id": "ev_6277ffab41cb11f623bbc54987e210d2",
+      "source_id": "src_6d2d1bf64d1024b1ecd5c003",
+      "line_start": 5,
+      "line_end": 5
+    },
+    {
+      "event_id": "ev_a99c918127485f01b13c3d43a77d1d87",
+      "source_id": "src_6d2d1bf64d1024b1ecd5c003",
+      "line_start": 6,
+      "line_end": 6
+    },
+    {
+      "event_id": "ev_4dfdf80cf1afa813fc5cae36c1b37ff3",
+      "source_id": "src_6d2d1bf64d1024b1ecd5c003",
+      "line_start": 7,
+      "line_end": 7
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history.",
+    "Upstream and downstream request segments or a direct failure signal are missing."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Collect missing request segments and dependency metrics before selecting a cause."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c005",
+        "request_id": "req-2a5d3ed84a",
+        "limit": 50
+      },
+      "duration_ms": 9.726899996167049,
+      "result_bytes": 3952,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c005",
+        "event_id": "ev_70674168429bdba3cef7c4339d001521",
+        "context": 1
+      },
+      "duration_ms": 7.2154000226873904,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 5.0826999940909445,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

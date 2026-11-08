@@ -1,0 +1,145 @@
+{
+  "schema_version": "1",
+  "dataset_id": "native-demo",
+  "question": "What explains this request outcome?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-e89cfaf55af8",
+  "run_id": "c40671f0-9b81-4eaa-8544-7561a5a4d4fb",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:45:06.590474+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-11-07T16:42:00.055689Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_74b2152eb2293a486434c5743ea742ba"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.055689Z",
+      "text": "database: database connection pool exhausted: active=1 limit=1",
+      "evidence_ids": [
+        "ev_8ab652d8d01e78a4320525baee17f53b"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.058776Z",
+      "text": "api: database pool unavailable",
+      "evidence_ids": [
+        "ev_f6980fd81c6d8b86672fb7b7502085fd"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_74b2152eb2293a486434c5743ea742ba"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "database logged ERROR: database connection pool exhausted: active=1 limit=1",
+      "evidence_ids": [
+        "ev_8ab652d8d01e78a4320525baee17f53b"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "api logged ERROR: database pool unavailable",
+      "evidence_ids": [
+        "ev_f6980fd81c6d8b86672fb7b7502085fd"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "Database connection or resource exhaustion likely caused downstream request failures.",
+      "status": "likely",
+      "supporting_observations": [
+        "obs-2"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_74b2152eb2293a486434c5743ea742ba",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 6,
+      "line_end": 6
+    },
+    {
+      "event_id": "ev_8ab652d8d01e78a4320525baee17f53b",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 7,
+      "line_end": 7
+    },
+    {
+      "event_id": "ev_f6980fd81c6d8b86672fb7b7502085fd",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 8,
+      "line_end": 8
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Measure database connection occupancy, pool limits and competing transactions."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "native-demo",
+        "request_id": "req-e89cfaf55af8",
+        "limit": 50
+      },
+      "duration_ms": 3.313100023660809,
+      "result_bytes": 1896,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "native-demo",
+        "event_id": "ev_74b2152eb2293a486434c5743ea742ba",
+        "context": 1
+      },
+      "duration_ms": 1.6696999955456704,
+      "result_bytes": 2127,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 1.2283000105526298,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

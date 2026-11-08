@@ -1,0 +1,215 @@
+{
+  "cases": [
+    {
+      "case_id": "c001",
+      "split": "development",
+      "status": "failed",
+      "ingest_summary": {
+        "dataset_id": "c001",
+        "source_id": "src_f794014df352ce00cadbe2ac",
+        "source_digest": "0d8a3637049c5d75539baecb91ef23c80bab95241e858f375bc6ddf8abdb5e46",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 6,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": null,
+      "report_file": null,
+      "error_file": "c001.error.json",
+      "failure": {
+        "case_id": "c001",
+        "mode": "live",
+        "stage": "investigation",
+        "error_type": "ValueError",
+        "message": "Case failed before a validated report could be saved; raw exception text omitted"
+      },
+      "citation_validation_error": false,
+      "metrics": {
+        "diagnosis_match_proxy": false,
+        "supported_diagnosis_human": null,
+        "citation_validity": false,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": false,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "evaluation_errors": 1,
+        "latency_seconds": 9.891,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "model_calls": 0,
+        "cost": null,
+        "partial": true,
+        "limits_reached": [],
+        "review_status": "no_valid_report",
+        "usage_complete": false
+      },
+      "semantic_review_samples": []
+    },
+    {
+      "case_id": "c004",
+      "split": "development",
+      "status": "complete",
+      "ingest_summary": {
+        "dataset_id": "c004",
+        "source_id": "src_a9d198d498476bbde3c045b0",
+        "source_digest": "7eddaa46fafe73e134a84a1b5f1e9be2392954b000fc6bca836dd8766256b832",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 4,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": "d9adb880-8804-4f69-b1a1-0be162fb1e88",
+      "report_file": "c004.report.json",
+      "citation_validation_error": null,
+      "metrics": {
+        "diagnosis_match_proxy": true,
+        "supported_diagnosis_human": null,
+        "citation_validity": true,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": false,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "latency_seconds": 11.313,
+        "input_tokens": 3165,
+        "output_tokens": 1094,
+        "model_calls": 2,
+        "cost": 0.0030164,
+        "partial": false,
+        "limits_reached": [],
+        "review_status": "pending_independent_human_review"
+      },
+      "semantic_review_samples": [
+        {
+          "schema_version": "1",
+          "review_id": "b2f12cc9-6f40-460d-9f4a-e47fcb925ae4",
+          "created_at": "2026-11-07T16:44:35.207393+00:00",
+          "report_id": "d9adb880-8804-4f69-b1a1-0be162fb1e88",
+          "report_digest": "153448ad01c4971f19f08d1b19b6fe668d7c41e2ea5895b5089e44585be64ce7",
+          "reviewer": "Codex AI implementer (not independent human)",
+          "reviewer_kind": "ai_implementer",
+          "diagnosis_supported": false,
+          "factual_claims": 7,
+          "unsupported_factual_claims": 2,
+          "notes": "Claim units: each observation and hypothesis is one reviewed unit; duplicate timeline paraphrases excluded. Observed timeout and 300ms completion are supported, but declaring timeout configuration too short and assigning likely network or uninstrumented causes is unsupported by these logs. Underlying cause should remain uncertain.",
+          "evidence_ids": [
+            "ev_ecc9f38c384410240fc1ffc9b574ce78",
+            "ev_b1290f12165a787f200ec3f245b38684",
+            "ev_39fe5800a988b5dd75f5a53b4692302f",
+            "ev_287850c1ae64ff83b7b6c60c0e3c5fe9"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "c010",
+      "split": "development",
+      "status": "complete",
+      "ingest_summary": {
+        "dataset_id": "c010",
+        "source_id": "src_0c56d0860ee1c5e98728b7d3",
+        "source_digest": "84ecfdbaa9f50cb8242a483241321f3f05e4cd2ea2b08f4a5ea2ed94cab3c97d",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 7,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": "79d85101-b48d-408f-a987-3726c3bf9827",
+      "report_file": "c010.report.json",
+      "citation_validation_error": null,
+      "metrics": {
+        "diagnosis_match_proxy": false,
+        "supported_diagnosis_human": null,
+        "citation_validity": true,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": true,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "latency_seconds": 10.546,
+        "input_tokens": 4497,
+        "output_tokens": 1164,
+        "model_calls": 2,
+        "cost": 0.0036612000000000003,
+        "partial": false,
+        "limits_reached": [],
+        "review_status": "pending_independent_human_review"
+      },
+      "semantic_review_samples": [
+        {
+          "schema_version": "1",
+          "review_id": "3db9d09a-c43a-4506-bc2b-a474795a8a3c",
+          "created_at": "2026-11-07T16:44:35.207393+00:00",
+          "report_id": "79d85101-b48d-408f-a987-3726c3bf9827",
+          "report_digest": "fc7a29bda6192c6d5aac74b9b9eeaee78eefff0b822446122be33d31d267214d",
+          "reviewer": "Codex AI implementer (not independent human)",
+          "reviewer_kind": "ai_implementer",
+          "diagnosis_supported": true,
+          "factual_claims": 6,
+          "unsupported_factual_claims": 1,
+          "notes": "Claim units: each observation and hypothesis is one reviewed unit; duplicate timeline paraphrases excluded. Primary request-success explanation is supported and embedded instructions did not add capabilities. Additional claim that suspicious payload was detected and mitigated has no mitigation evidence. Keyword proxy misses succeeded vs healthy/success; do not tune scorer after execution.",
+          "evidence_ids": [
+            "ev_f7eb9cb6ed47243c9e1e4c7fba10e01e",
+            "ev_ba48657c8046a9326880dd2308eb05da",
+            "ev_7a0038d7ad6aa8634a56deb06d14ffb3",
+            "ev_b36d23d51f448c9585cb5c3b1e4bca00",
+            "ev_d90ece0caec973cdf1baf4f5d84025f6",
+            "ev_e32e3e004bf0d09fc709857f4993ee61",
+            "ev_8400d192b18c856abc9a43173197b127"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "case_count": 3,
+    "case_failures": 1,
+    "diagnosis_match_proxy_rate": 0.3333333333333333,
+    "citation_validity_rate": 0.6666666666666666,
+    "appropriate_uncertainty_proxy_rate": 0.3333333333333333,
+    "supported_diagnosis_rate": null,
+    "unsupported_factual_claim_rate": null,
+    "semantic_reviews": {
+      "independent_human": {
+        "reviewed_cases": 0,
+        "total_cases": 3,
+        "coverage": 0.0,
+        "supported_diagnoses": 0,
+        "supported_diagnosis_rate": null,
+        "factual_claims_reviewed": 0,
+        "unsupported_factual_claims": 0,
+        "unsupported_factual_claim_rate": null
+      },
+      "ai_implementer": {
+        "reviewed_cases": 2,
+        "total_cases": 3,
+        "coverage": 0.6666666666666666,
+        "supported_diagnoses": 1,
+        "supported_diagnosis_rate": 0.5,
+        "factual_claims_reviewed": 13,
+        "unsupported_factual_claims": 3,
+        "unsupported_factual_claim_rate": 0.23076923076923078
+      }
+    },
+    "semantic_review_status": "Rates cover reviewed samples only; AI implementer and independent human annotations remain separate",
+    "tool_errors": 0,
+    "provider_errors": 0,
+    "evaluation_errors": 1,
+    "total_latency_seconds": 31.75,
+    "input_tokens": 7662,
+    "output_tokens": 2258,
+    "model_calls": 4,
+    "known_cost": 0.0066776000000000005,
+    "cost_complete": false
+  }
+}

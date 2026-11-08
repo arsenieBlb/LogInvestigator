@@ -1,0 +1,111 @@
+{
+  "kind": "running_service_capture_investigations",
+  "source_run": "run-54c8d4f2b341",
+  "mode": "baseline",
+  "cases": [
+    {
+      "scenario": "healthy",
+      "request_id": "req-63723266a141",
+      "status": 200,
+      "result": "ok",
+      "report": "e6e7729e-bfc7-44b5-8bf5-1a01f5e211d0.json",
+      "hypotheses": [
+        {
+          "statement": "No failure is established in the available logs; observed requests appear healthy or harmless noise.",
+          "status": "supported",
+          "supporting_observations": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5"
+          ],
+          "conflicting_observations": []
+        }
+      ],
+      "partial": false,
+      "evidence_count": 5
+    },
+    {
+      "scenario": "database_limit",
+      "request_id": "req-e89cfaf55af8",
+      "status": 503,
+      "result": "database pool unavailable",
+      "report": "c40671f0-9b81-4eaa-8544-7561a5a4d4fb.json",
+      "hypotheses": [
+        {
+          "statement": "Database connection or resource exhaustion likely caused downstream request failures.",
+          "status": "likely",
+          "supporting_observations": [
+            "obs-2"
+          ],
+          "conflicting_observations": []
+        }
+      ],
+      "partial": false,
+      "evidence_count": 3
+    },
+    {
+      "scenario": "retry_storm",
+      "request_id": "req-6c1a9d61913f",
+      "status": 502,
+      "result": "retry budget exhausted",
+      "report": "bf3c1f97-9568-4239-8a55-d9e04b644554.json",
+      "hypotheses": [
+        {
+          "statement": "A worker retry storm or backlog likely delayed request completion.",
+          "status": "likely",
+          "supporting_observations": [
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6",
+            "obs-7",
+            "obs-9"
+          ],
+          "conflicting_observations": []
+        }
+      ],
+      "partial": false,
+      "evidence_count": 9
+    },
+    {
+      "scenario": "config_mismatch",
+      "request_id": "req-b0eda0b7e337",
+      "status": 502,
+      "result": "unsupported schema version",
+      "report": "21a6d873-55ac-4701-8517-9673ca7c88b3.json",
+      "hypotheses": [
+        {
+          "statement": "A deployment or configuration mismatch between services likely caused failures.",
+          "status": "likely",
+          "supporting_observations": [
+            "obs-3"
+          ],
+          "conflicting_observations": []
+        }
+      ],
+      "partial": false,
+      "evidence_count": 5
+    },
+    {
+      "scenario": "slow_timeout",
+      "request_id": "req-1b4569fa31db",
+      "status": 504,
+      "result": "request timeout",
+      "report": "ff32e207-264e-4576-9edb-62d4e5ed8745.json",
+      "hypotheses": [
+        {
+          "statement": "A slow dependency or timeout is observed, but its underlying cause cannot be established.",
+          "status": "insufficient_evidence",
+          "supporting_observations": [
+            "obs-4"
+          ],
+          "conflicting_observations": []
+        }
+      ],
+      "partial": false,
+      "evidence_count": 6
+    }
+  ]
+}

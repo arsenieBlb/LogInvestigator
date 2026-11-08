@@ -1,0 +1,185 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c003",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-cc4d1649c2",
+  "run_id": "2762cfe7-285f-47ab-a516-4f05824ca6f5",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:36:37.255534+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T12:26:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_a6fb18d04fa991c020f2b791940b9519"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:26:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_727af676aefb720a7e0ec19d7e6c2146"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:26:00.080000Z",
+      "text": "api: deployment activated API schema 2",
+      "evidence_ids": [
+        "ev_535fe062937e4dbe1774757ce19acd9e"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:26:00.120000Z",
+      "text": "worker: configuration mismatch: API schema 2, worker expects schema 1",
+      "evidence_ids": [
+        "ev_0af919e348d40f643caef679e69ef192"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:26:00.160000Z",
+      "text": "api: worker rejected payload version",
+      "evidence_ids": [
+        "ev_448dfb67c3efd9f40081c42f3491b4fd"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_a6fb18d04fa991c020f2b791940b9519"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_727af676aefb720a7e0ec19d7e6c2146"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "api logged INFO: deployment activated API schema 2",
+      "evidence_ids": [
+        "ev_535fe062937e4dbe1774757ce19acd9e"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "worker logged ERROR: configuration mismatch: API schema 2, worker expects schema 1",
+      "evidence_ids": [
+        "ev_0af919e348d40f643caef679e69ef192"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "api logged ERROR: worker rejected payload version",
+      "evidence_ids": [
+        "ev_448dfb67c3efd9f40081c42f3491b4fd"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "A deployment or configuration mismatch between services likely caused failures.",
+      "status": "likely",
+      "supporting_observations": [
+        "obs-4"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_a6fb18d04fa991c020f2b791940b9519",
+      "source_id": "src_bf45f9ebce32b57d879b4840",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_727af676aefb720a7e0ec19d7e6c2146",
+      "source_id": "src_bf45f9ebce32b57d879b4840",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_535fe062937e4dbe1774757ce19acd9e",
+      "source_id": "src_bf45f9ebce32b57d879b4840",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_0af919e348d40f643caef679e69ef192",
+      "source_id": "src_bf45f9ebce32b57d879b4840",
+      "line_start": 4,
+      "line_end": 4
+    },
+    {
+      "event_id": "ev_448dfb67c3efd9f40081c42f3491b4fd",
+      "source_id": "src_bf45f9ebce32b57d879b4840",
+      "line_start": 5,
+      "line_end": 5
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Compare service deployment versions, configuration values and schema compatibility."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c003",
+        "request_id": "req-cc4d1649c2",
+        "limit": 50
+      },
+      "duration_ms": 0.0,
+      "result_bytes": 2966,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c003",
+        "event_id": "ev_a6fb18d04fa991c020f2b791940b9519",
+        "context": 1
+      },
+      "duration_ms": 14.999999984866008,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 0.0,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

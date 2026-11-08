@@ -1,0 +1,166 @@
+{
+  "schema_version": "1",
+  "seed": 12000,
+  "cases": [
+    {
+      "case_id": "c001",
+      "split": "development",
+      "dataset_id": "c001",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-3009d8cab1",
+      "file": "cases/c001/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12000
+    },
+    {
+      "case_id": "c002",
+      "split": "development",
+      "dataset_id": "c002",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-aecea99569",
+      "file": "cases/c002/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12001
+    },
+    {
+      "case_id": "c003",
+      "split": "development",
+      "dataset_id": "c003",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-cc4d1649c2",
+      "file": "cases/c003/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12002
+    },
+    {
+      "case_id": "c004",
+      "split": "development",
+      "dataset_id": "c004",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-3f7654e7c2",
+      "file": "cases/c004/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12003
+    },
+    {
+      "case_id": "c005",
+      "split": "development",
+      "dataset_id": "c005",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-2a5d3ed84a",
+      "file": "cases/c005/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12004
+    },
+    {
+      "case_id": "c006",
+      "split": "development",
+      "dataset_id": "c006",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-a90a5e13e5",
+      "file": "cases/c006/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12005
+    },
+    {
+      "case_id": "c007",
+      "split": "development",
+      "dataset_id": "c007",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-bfa3cb11c8",
+      "file": "cases/c007/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12006
+    },
+    {
+      "case_id": "c008",
+      "split": "development",
+      "dataset_id": "c008",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-7b5f98183a",
+      "file": "cases/c008/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12007
+    },
+    {
+      "case_id": "c009",
+      "split": "development",
+      "dataset_id": "c009",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-151edc4924",
+      "file": "cases/c009/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12008
+    },
+    {
+      "case_id": "c010",
+      "split": "development",
+      "dataset_id": "c010",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-dcc60ddfc9",
+      "file": "cases/c010/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12009
+    },
+    {
+      "case_id": "c011",
+      "split": "held_out",
+      "dataset_id": "c011",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-be5a909ea0",
+      "file": "cases/c011/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12010
+    },
+    {
+      "case_id": "c012",
+      "split": "held_out",
+      "dataset_id": "c012",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-4fca14e0fd",
+      "file": "cases/c012/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12011
+    },
+    {
+      "case_id": "c013",
+      "split": "held_out",
+      "dataset_id": "c013",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-2fe50f8fdb",
+      "file": "cases/c013/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12012
+    },
+    {
+      "case_id": "c014",
+      "split": "held_out",
+      "dataset_id": "c014",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-406254db64",
+      "file": "cases/c014/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12013
+    },
+    {
+      "case_id": "c015",
+      "split": "held_out",
+      "dataset_id": "c015",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-abf9d765f3",
+      "file": "cases/c015/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12014
+    },
+    {
+      "case_id": "c016",
+      "split": "held_out",
+      "dataset_id": "c016",
+      "question": "What explains the observed request outcomes, and what remains uncertain?",
+      "request_id": "req-f55f041020",
+      "file": "cases/c016/events.jsonl",
+      "kind": "synthetic_fixture_replay",
+      "seed": 12015
+    }
+  ]
+}

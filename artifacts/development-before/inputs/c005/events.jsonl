@@ -1,0 +1,7 @@
+{"attributes": {"route": "/jobs"}, "message": "request accepted", "request_id": "req-2a5d3ed84a", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T12:52:00+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 22}, "message": "periodic telemetry flush", "request_id": "req-2a5d3ed84a", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T12:52:00.040000+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 28}, "message": "periodic telemetry flush", "request_id": "req-2a5d3ed84a", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T12:52:00.080000+00:00", "version": "2026.01"}
+{"attributes": {}, "message": "optional telemetry exporter unavailable; business processing unaffected", "request_id": "req-2a5d3ed84a", "service": "worker", "severity": "WARN", "timestamp": "2026-01-15T12:52:00.120000+00:00", "version": "2026.01"}
+{"attributes": {"duration_ms": 2}, "message": "query completed", "request_id": "req-2a5d3ed84a", "service": "database", "severity": "INFO", "timestamp": "2026-01-15T12:52:00.160000+00:00", "version": "2026.01"}
+{"attributes": {}, "message": "job completed", "request_id": "req-2a5d3ed84a", "service": "worker", "severity": "INFO", "timestamp": "2026-01-15T12:52:00.200000+00:00", "version": "2026.01"}
+{"attributes": {"status": 200}, "message": "request completed successfully", "request_id": "req-2a5d3ed84a", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T12:52:00.240000+00:00", "version": "2026.01"}

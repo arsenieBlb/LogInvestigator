@@ -1,0 +1,167 @@
+{
+  "schema_version": "1",
+  "kind": "synthetic_fixture_replay_evaluation",
+  "mode": "live",
+  "split": "development",
+  "cases": [
+    {
+      "case_id": "c001",
+      "split": "development",
+      "status": "failed",
+      "ingest_summary": {
+        "dataset_id": "c001",
+        "source_id": "src_f794014df352ce00cadbe2ac",
+        "source_digest": "0d8a3637049c5d75539baecb91ef23c80bab95241e858f375bc6ddf8abdb5e46",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 6,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": null,
+      "report_file": null,
+      "error_file": "c001.error.json",
+      "failure": {
+        "case_id": "c001",
+        "mode": "live",
+        "stage": "investigation",
+        "error_type": "ValueError",
+        "message": "Case failed before a validated report could be saved; raw exception text omitted"
+      },
+      "citation_validation_error": false,
+      "metrics": {
+        "diagnosis_match_proxy": false,
+        "supported_diagnosis_human": null,
+        "citation_validity": false,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": false,
+        "tool_errors": 0,
+        "provider_errors": 1,
+        "latency_seconds": 9.891,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost": null,
+        "partial": true,
+        "limits_reached": [],
+        "review_status": "no_valid_report",
+        "usage_complete": false
+      }
+    },
+    {
+      "case_id": "c004",
+      "split": "development",
+      "status": "complete",
+      "ingest_summary": {
+        "dataset_id": "c004",
+        "source_id": "src_a9d198d498476bbde3c045b0",
+        "source_digest": "7eddaa46fafe73e134a84a1b5f1e9be2392954b000fc6bca836dd8766256b832",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 4,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": "d9adb880-8804-4f69-b1a1-0be162fb1e88",
+      "report_file": "c004.report.json",
+      "citation_validation_error": null,
+      "metrics": {
+        "diagnosis_match_proxy": true,
+        "supported_diagnosis_human": null,
+        "citation_validity": true,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": false,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "latency_seconds": 11.313,
+        "input_tokens": 3165,
+        "output_tokens": 1094,
+        "cost": 0.0030164,
+        "partial": false,
+        "limits_reached": [],
+        "review_status": "pending_independent_human_review"
+      }
+    },
+    {
+      "case_id": "c010",
+      "split": "development",
+      "status": "complete",
+      "ingest_summary": {
+        "dataset_id": "c010",
+        "source_id": "src_0c56d0860ee1c5e98728b7d3",
+        "source_digest": "84ecfdbaa9f50cb8242a483241321f3f05e4cd2ea2b08f4a5ea2ed94cab3c97d",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 7,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": "79d85101-b48d-408f-a987-3726c3bf9827",
+      "report_file": "c010.report.json",
+      "citation_validation_error": null,
+      "metrics": {
+        "diagnosis_match_proxy": false,
+        "supported_diagnosis_human": null,
+        "citation_validity": true,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": true,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "latency_seconds": 10.546,
+        "input_tokens": 4497,
+        "output_tokens": 1164,
+        "cost": 0.0036612000000000003,
+        "partial": false,
+        "limits_reached": [],
+        "review_status": "pending_independent_human_review"
+      }
+    }
+  ],
+  "summary": {
+    "case_count": 3,
+    "case_failures": 1,
+    "diagnosis_match_proxy_rate": 0.3333333333333333,
+    "citation_validity_rate": 0.6666666666666666,
+    "appropriate_uncertainty_proxy_rate": 0.3333333333333333,
+    "supported_diagnosis_rate": null,
+    "unsupported_factual_claim_rate": null,
+    "semantic_reviews": {
+      "independent_human": {
+        "reviewed_cases": 0,
+        "total_cases": 3,
+        "coverage": 0.0,
+        "supported_diagnoses": 0,
+        "supported_diagnosis_rate": null,
+        "factual_claims_reviewed": 0,
+        "unsupported_factual_claims": 0,
+        "unsupported_factual_claim_rate": null
+      },
+      "ai_implementer": {
+        "reviewed_cases": 0,
+        "total_cases": 3,
+        "coverage": 0.0,
+        "supported_diagnoses": 0,
+        "supported_diagnosis_rate": null,
+        "factual_claims_reviewed": 0,
+        "unsupported_factual_claims": 0,
+        "unsupported_factual_claim_rate": null
+      }
+    },
+    "semantic_review_status": "Rates cover reviewed samples only; AI implementer and independent human annotations remain separate",
+    "tool_errors": 0,
+    "total_latency_seconds": 31.75,
+    "input_tokens": 7662,
+    "output_tokens": 2258,
+    "known_cost": 0.0066776000000000005,
+    "cost_complete": false
+  },
+  "scoring_notes": "Regex diagnosis and uncertainty proxies only. Correct citation does not establish semantic support. Human metrics remain null until reviewed."
+}

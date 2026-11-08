@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "case_id": "c001",
+      "split": "development",
+      "status": "failed",
+      "ingest_summary": {
+        "dataset_id": "c001",
+        "source_id": "src_f794014df352ce00cadbe2ac",
+        "source_digest": "0d8a3637049c5d75539baecb91ef23c80bab95241e858f375bc6ddf8abdb5e46",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 6,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": "a24ab6e2-300d-4df1-ab5b-3e32f594447f",
+      "report_file": null,
+      "error_file": "c001.error.json",
+      "failure": {
+        "case_id": "c001",
+        "mode": "live",
+        "stage": "report_evidence_validation",
+        "error_type": "InvestigationValidationError",
+        "error_code": "invalid_report_evidence",
+        "diagnostics": {
+          "run_id": "a24ab6e2-300d-4df1-ab5b-3e32f594447f",
+          "usage": {
+            "provider": "openrouter",
+            "model": "openai/gpt-4.1-mini",
+            "input_tokens": 3985,
+            "output_tokens": 903,
+            "cost": 0.0019252,
+            "model_calls": 2
+          },
+          "tool_calls": [
+            {
+              "name": "trace_request",
+              "duration_ms": 67.95550000970252,
+              "result_bytes": 3499,
+              "error": null
+            }
+          ],
+          "limits_reached": [],
+          "error_code": "invalid_report_evidence"
+        },
+        "message": "Case failed before a validated report could be saved; raw exception text omitted"
+      },
+      "citation_validation_error": true,
+      "schema_validation_error": false,
+      "metrics": {
+        "diagnosis_match_proxy": false,
+        "supported_diagnosis_human": null,
+        "citation_validity": false,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": false,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "evaluation_errors": 1,
+        "latency_seconds": 8.609,
+        "input_tokens": 3985,
+        "output_tokens": 903,
+        "model_calls": 2,
+        "cost": 0.0019252,
+        "partial": true,
+        "limits_reached": [],
+        "review_status": "no_valid_report",
+        "usage_complete": true
+      },
+      "semantic_review_samples": []
+    }
+  ],
+  "summary": {
+    "case_count": 1,
+    "case_failures": 1,
+    "diagnosis_match_proxy_rate": 0.0,
+    "citation_validity_rate": 0.0,
+    "appropriate_uncertainty_proxy_rate": 0.0,
+    "supported_diagnosis_rate": null,
+    "unsupported_factual_claim_rate": null,
+    "semantic_reviews": {
+      "independent_human": {
+        "reviewed_cases": 0,
+        "total_cases": 1,
+        "coverage": 0.0,
+        "supported_diagnoses": 0,
+        "supported_diagnosis_rate": null,
+        "factual_claims_reviewed": 0,
+        "unsupported_factual_claims": 0,
+        "unsupported_factual_claim_rate": null
+      },
+      "ai_implementer": {
+        "reviewed_cases": 0,
+        "total_cases": 1,
+        "coverage": 0.0,
+        "supported_diagnoses": 0,
+        "supported_diagnosis_rate": null,
+        "factual_claims_reviewed": 0,
+        "unsupported_factual_claims": 0,
+        "unsupported_factual_claim_rate": null
+      }
+    },
+    "semantic_review_status": "Rates cover reviewed samples only; AI implementer and independent human annotations remain separate",
+    "tool_errors": 0,
+    "provider_errors": 0,
+    "evaluation_errors": 1,
+    "total_latency_seconds": 8.609,
+    "input_tokens": 3985,
+    "output_tokens": 903,
+    "model_calls": 2,
+    "known_cost": 0.0019252,
+    "cost_complete": true
+  }
+}

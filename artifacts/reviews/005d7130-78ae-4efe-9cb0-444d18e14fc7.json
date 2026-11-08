@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "review_id": "005d7130-78ae-4efe-9cb0-444d18e14fc7",
+  "report_id": "c8279983-70ec-4a92-bd6d-3102e14e3f78",
+  "report_digest": "cfe95563b8a9a7dd0be6968af24222f328bcd3c6be97c28fac98991503c29442",
+  "reviewer": "Codex AI implementer (not independent human)",
+  "agreement": "partly",
+  "corrected_explanation": "The report appropriately avoids establishing a cause from timeout alone, but ingestion dropped the worker backlog warning because synthetic input used unsupported WARN severity. Correct fixture severity to documented WARNING, retain the original input and output, expose ingestion rejection counts, then rerun the development suite. This is a development fixture correction, not evidence of model improvement.",
+  "evidence_ids": [
+    "ev_7275c464b217bf5bb5049fd80a3913fa"
+  ],
+  "created_at": "2026-11-07T16:37:52.566429+00:00"
+}

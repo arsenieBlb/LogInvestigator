@@ -1,0 +1,122 @@
+{
+  "project": "LogInvestigator",
+  "review_date": "2026-11-08",
+  "all_passed": true,
+  "live_model_called": false,
+  "source": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "348bddb30012d56faee303498550bf9a0e7c8f340647b9548998453fd4133b7d"
+    },
+    {
+      "path": "src/log_investigator/__init__.py",
+      "sha256": "3f982bf51f07a63e50eece836e81ed9f4a0063b6b086c42e1790b88aa5bad43e"
+    },
+    {
+      "path": "src/log_investigator/__main__.py",
+      "sha256": "aefd9048090ec6de11f629f58343937fd77a52be9c6ab743b7e79210dbfbe5fd"
+    },
+    {
+      "path": "src/log_investigator/agent.py",
+      "sha256": "620f01ec0ae82b1d68d9061c9d74b470979d3872972052bd556e1361d368313c"
+    },
+    {
+      "path": "src/log_investigator/cli.py",
+      "sha256": "24e2caa003f253cc966d2f2eb75fec9efd6c3c1befcc2900b108bf37a1d03eef"
+    },
+    {
+      "path": "src/log_investigator/demo.py",
+      "sha256": "8a1a88805439a69a30555f7bf953c30fec84029f01cf29d09851b27d6fb6c5b1"
+    },
+    {
+      "path": "src/log_investigator/evaluation.py",
+      "sha256": "ccb9aad532929bcfcc84a928bb619a05bd43ab84f73f73f4a2e4573bbf1aa799"
+    },
+    {
+      "path": "src/log_investigator/ingest.py",
+      "sha256": "a7b67e536608cfc7809f027a188e51c53f5957d02b93376c42d978a6287228e1"
+    },
+    {
+      "path": "src/log_investigator/mcp_client.py",
+      "sha256": "3e0018f94da34337c06a3028323e92b30a41ac695e2564abd638b5dd4310891e"
+    },
+    {
+      "path": "src/log_investigator/mcp_server.py",
+      "sha256": "f0527a0a373457a1c5c709567c2b5ecea83e44a1e01989fc0d8d11b32885291b"
+    },
+    {
+      "path": "src/log_investigator/models.py",
+      "sha256": "664f6bd46d7ba879f6623b040b833e949bc0b2a3c8337b018d95ed2a8315d542"
+    },
+    {
+      "path": "src/log_investigator/providers.py",
+      "sha256": "4c08e0ae99211916da756f35b7145ad5b2d209e730a9d99d29c968076e8479c5"
+    },
+    {
+      "path": "src/log_investigator/reports.py",
+      "sha256": "cb09dfdb266aa8681a8a96f1049b10f0d6aea0a67955087eabc7d5495150d24a"
+    },
+    {
+      "path": "src/log_investigator/retrieval.py",
+      "sha256": "7012103265f431d619aa58f97fc23eb9c979056fb4eada52a90dd4d4eb938f23"
+    },
+    {
+      "path": "src/log_investigator/store.py",
+      "sha256": "7e51707c1fc19ecc74d242ee1eb905117b4acb2b3e354fbc66633bc85bb59633"
+    },
+    {
+      "path": "tests/test_agent.py",
+      "sha256": "8c42473733cd8cdfdeee7660b6a457caad4196edb2b4b19af77040404b11946d"
+    },
+    {
+      "path": "tests/test_demo_services.py",
+      "sha256": "ebd39bcf190562638819ab8c2c64be9ddfbace215500b306fe9e9bc4767ada9f"
+    },
+    {
+      "path": "tests/test_evaluation_replay.py",
+      "sha256": "086a0a1241e1cad2f7dc2e91fbf6e1fccf8ff47fc0d43ecb08931b50a680a61d"
+    },
+    {
+      "path": "tests/test_mcp_transport.py",
+      "sha256": "0c6aff9a90a4a67a26631bbcc5a078bdd43a910c936d7397df829afbe5bd1957"
+    },
+    {
+      "path": "tests/test_reports_cli.py",
+      "sha256": "34f49fcf1a558de6bd9e4765dc92caaf0437662e6723e42f652257f6c6ea41dd"
+    },
+    {
+      "path": "tests/test_storage.py",
+      "sha256": "35b738cce7f1a84525c87c9a7fd46489b149acd7c3651b43e98bb6e1fc807b3a"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "71810385bf2013556db713f39c6a284947d5c38bbaecd61093546ed13a6eb9e0"
+    }
+  ],
+  "checks": [
+    {
+      "check": "ruff",
+      "exit_code": 0,
+      "seconds": 0.47,
+      "log": "LogInvestigator_ruff.log"
+    },
+    {
+      "check": "format",
+      "exit_code": 0,
+      "seconds": 0.3,
+      "log": "LogInvestigator_format.log"
+    },
+    {
+      "check": "types",
+      "exit_code": 0,
+      "seconds": 1.84,
+      "log": "LogInvestigator_types.log"
+    },
+    {
+      "check": "tests",
+      "exit_code": 0,
+      "seconds": 53.69,
+      "log": "LogInvestigator_tests.log"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Log Investigator JSONL event input (jsonl-v1)",
+  "description": "One UTF-8 JSON object per line. The parser additionally validates timezone-aware ISO 8601 dates, encodable Unicode scalar values, finite JSON numbers, serialized attributes <=8192 UTF-8 bytes, source lines <=32768 bytes and complete files <=10485760 bytes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["timestamp", "service", "severity", "message"],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "A datetime accepted by Python datetime.fromisoformat, with a non-null UTC offset; terminal Z is accepted. Semantic parsing rejects invalid or timezone-naive values.",
+      "x-semantic-validation": "timezone-aware-iso8601"
+    },
+    "service": {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[^\\u0000]*$"},
+    "severity": {"type": "string", "enum": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]},
+    "message": {"type": "string", "minLength": 1, "maxLength": 8192, "pattern": "^[^\\u0000]*$"},
+    "request_id": {"anyOf": [{"type": "null"}, {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[^\\u0000]*$"}]},
+    "version": {"anyOf": [{"type": "null"}, {"type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[^\\u0000]*$"}]},
+    "attributes": {"type": "object", "default": {}, "description": "Finite JSON values; json.dumps(attributes, ensure_ascii=False, allow_nan=False) encoded as UTF-8 must not exceed 8192 bytes.", "x-max-serialized-utf8-bytes": 8192}
+  }
+}

@@ -1,0 +1,8 @@
+{"attributes": {"route": "/jobs"}, "message": "request accepted", "request_id": "req-151edc4924", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T13:44:00+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 24}, "message": "periodic telemetry flush", "request_id": "req-151edc4924", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T13:44:00.040000+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 22}, "message": "periodic telemetry flush", "request_id": "req-151edc4924", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T13:44:00.080000+00:00", "version": "2026.01"}
+{"attributes": {"schema_version": 2}, "message": "deployment activated API schema 2", "request_id": "req-151edc4924", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T13:44:00.120000+00:00", "version": "2.0"}
+{"attributes": {"expected_schema": 1, "received_schema": 2}, "message": "configuration mismatch: API schema 2, worker expects schema 1", "request_id": "req-151edc4924", "service": "worker", "severity": "ERROR", "timestamp": "2026-01-15T13:44:00.160000+00:00", "version": "1.0"}
+{"attributes": {"status": 502}, "message": "worker rejected payload version", "request_id": "req-151edc4924", "service": "api", "severity": "ERROR", "timestamp": "2026-01-15T13:44:00.200000+00:00", "version": "2.0"}
+{"attributes": {}, "message": "rollback applied; API schema 1", "request_id": "req-151edc4924", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T13:44:00.240000+00:00", "version": "1.9"}
+{"attributes": {}, "message": "compatible job completed", "request_id": "req-151edc4924", "service": "worker", "severity": "INFO", "timestamp": "2026-01-15T13:44:00.280000+00:00", "version": "1.0"}

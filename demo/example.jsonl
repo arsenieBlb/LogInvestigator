@@ -1,0 +1,3 @@
+{"timestamp":"2026-01-01T12:00:00+02:00","service":"api","severity":"INFO","message":"request accepted","request_id":"request-example","version":"api-2","attributes":{"route":"/jobs"}}
+{"timestamp":"2026-01-01T10:00:00.025Z","service":"worker","severity":"ERROR","message":"database connection limit reached while acquiring connection","request_id":"request-example","version":"worker-2","attributes":{"pool_capacity":2}}
+{"timestamp":"2026-01-01T10:00:00.040Z","service":"api","severity":"ERROR","message":"request failed after worker reported unavailable database connection","request_id":"request-example","version":"api-2","attributes":{"status":503}}

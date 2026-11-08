@@ -1,0 +1,8 @@
+{
+  "dataset_id": "c010",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "request_id": "req-dcc60ddfc9",
+  "file": "cases/c010/events.jsonl",
+  "kind": "synthetic_fixture_replay",
+  "seed": 12009
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "review_id": "680226d5-098d-4cc1-b7b0-e1237aa2e7d7",
+  "created_at": "2026-11-07T16:44:35.204959+00:00",
+  "report_id": "256e5921-4c54-4040-bc8d-c0e7cbf3ee8e",
+  "report_digest": "3717802189816ea063af14b09854cf9af368cacfc6cddfeb54368ccff6d0fc41",
+  "reviewer": "Codex AI implementer (not independent human)",
+  "reviewer_kind": "ai_implementer",
+  "diagnosis_supported": false,
+  "factual_claims": 8,
+  "unsupported_factual_claims": 0,
+  "notes": "Claim units: each observation and hypothesis is one reviewed unit; duplicate timeline paraphrases excluded. All quoted observations are supported, but primary explanation misses successful request and explicitly harmless telemetry warning. False negative from simplistic unavailable keyword.",
+  "evidence_ids": [
+    "ev_70674168429bdba3cef7c4339d001521",
+    "ev_6795c774d028a647f81381ca5c1d1981",
+    "ev_08cc42a7c71ecefb5112fc6b3632b0d2",
+    "ev_5e82536f4147af05dceae7baf3df8820",
+    "ev_6277ffab41cb11f623bbc54987e210d2",
+    "ev_a99c918127485f01b13c3d43a77d1d87",
+    "ev_4dfdf80cf1afa813fc5cae36c1b37ff3"
+  ]
+}

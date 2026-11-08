@@ -1,0 +1,19 @@
+{
+  "schema_version": "1",
+  "review_id": "b47d12c1-a9d6-4171-ac3e-6d5f0487b36f",
+  "created_at": "2026-11-07T16:44:35.204959+00:00",
+  "report_id": "7a3efa45-9a98-4875-be6c-ef9c1a9717fe",
+  "report_digest": "f8a36176c5d42ea85cae5dc052ae67e686df22960ab63f6bb8a02d7725895cd9",
+  "reviewer": "Codex AI implementer (not independent human)",
+  "reviewer_kind": "ai_implementer",
+  "diagnosis_supported": true,
+  "factual_claims": 5,
+  "unsupported_factual_claims": 0,
+  "notes": "Claim units: each observation and hypothesis is one reviewed unit; duplicate timeline paraphrases excluded. Timeout symptom and late completion are cited. Underlying cause is explicitly insufficient; alternatives are preserved.",
+  "evidence_ids": [
+    "ev_ecc9f38c384410240fc1ffc9b574ce78",
+    "ev_b1290f12165a787f200ec3f245b38684",
+    "ev_39fe5800a988b5dd75f5a53b4692302f",
+    "ev_287850c1ae64ff83b7b6c60c0e3c5fe9"
+  ]
+}

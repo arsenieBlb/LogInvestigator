@@ -1,0 +1,270 @@
+{
+  "schema_version": "1",
+  "dataset_id": "native-demo",
+  "question": "What explains this request outcome?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-6c1a9d61913f",
+  "run_id": "bf3c1f97-9568-4239-8a55-d9e04b644554",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:45:07.592292+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-11-07T16:42:00.074587Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_2d44e6cf465951990539e9591793a72d"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.081614Z",
+      "text": "worker: job started",
+      "evidence_ids": [
+        "ev_9afb965aa9d3effc6cabb7d284a736bb"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.081614Z",
+      "text": "worker: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_d82393346887b100e4511662be0004f2"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.101875Z",
+      "text": "worker: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_0087f3ed17cb3299e113006d605a8ee1"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.117711Z",
+      "text": "worker: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_97b2167f71471453c156e239d5f91bf2"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.133498Z",
+      "text": "worker: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_e92bd53834243414669d024abf69102c"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.149136Z",
+      "text": "worker: retry storm exhausted retry budget",
+      "evidence_ids": [
+        "ev_df26048844182702b0afa231565b9527"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.151145Z",
+      "text": "worker: job failed",
+      "evidence_ids": [
+        "ev_f3efb76e0fb35ae3ee2c65d3455138a2"
+      ]
+    },
+    {
+      "timestamp": "2026-11-07T16:42:00.160861Z",
+      "text": "api: retry budget exhausted",
+      "evidence_ids": [
+        "ev_7e556d5af7b5eec3ff181cea08f5a034"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_2d44e6cf465951990539e9591793a72d"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "worker logged INFO: job started",
+      "evidence_ids": [
+        "ev_9afb965aa9d3effc6cabb7d284a736bb"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "worker logged WARNING: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_d82393346887b100e4511662be0004f2"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "worker logged WARNING: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_0087f3ed17cb3299e113006d605a8ee1"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "worker logged WARNING: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_97b2167f71471453c156e239d5f91bf2"
+      ]
+    },
+    {
+      "id": "obs-6",
+      "text": "worker logged WARNING: dependency refused job; retry scheduled; queue backlog increasing",
+      "evidence_ids": [
+        "ev_e92bd53834243414669d024abf69102c"
+      ]
+    },
+    {
+      "id": "obs-7",
+      "text": "worker logged ERROR: retry storm exhausted retry budget",
+      "evidence_ids": [
+        "ev_df26048844182702b0afa231565b9527"
+      ]
+    },
+    {
+      "id": "obs-8",
+      "text": "worker logged ERROR: job failed",
+      "evidence_ids": [
+        "ev_f3efb76e0fb35ae3ee2c65d3455138a2"
+      ]
+    },
+    {
+      "id": "obs-9",
+      "text": "api logged ERROR: retry budget exhausted",
+      "evidence_ids": [
+        "ev_7e556d5af7b5eec3ff181cea08f5a034"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "A worker retry storm or backlog likely delayed request completion.",
+      "status": "likely",
+      "supporting_observations": [
+        "obs-3",
+        "obs-4",
+        "obs-5",
+        "obs-6",
+        "obs-7",
+        "obs-9"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_2d44e6cf465951990539e9591793a72d",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 9,
+      "line_end": 9
+    },
+    {
+      "event_id": "ev_9afb965aa9d3effc6cabb7d284a736bb",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 10,
+      "line_end": 10
+    },
+    {
+      "event_id": "ev_d82393346887b100e4511662be0004f2",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 11,
+      "line_end": 11
+    },
+    {
+      "event_id": "ev_0087f3ed17cb3299e113006d605a8ee1",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 12,
+      "line_end": 12
+    },
+    {
+      "event_id": "ev_97b2167f71471453c156e239d5f91bf2",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 13,
+      "line_end": 13
+    },
+    {
+      "event_id": "ev_e92bd53834243414669d024abf69102c",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 14,
+      "line_end": 14
+    },
+    {
+      "event_id": "ev_df26048844182702b0afa231565b9527",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 15,
+      "line_end": 15
+    },
+    {
+      "event_id": "ev_f3efb76e0fb35ae3ee2c65d3455138a2",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 16,
+      "line_end": 16
+    },
+    {
+      "event_id": "ev_7e556d5af7b5eec3ff181cea08f5a034",
+      "source_id": "src_c70e67c3c33d73a0a91e69ac",
+      "line_start": 17,
+      "line_end": 17
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Inspect worker queue depth, retry policy, attempt rate and processing throughput."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "native-demo",
+        "request_id": "req-6c1a9d61913f",
+        "limit": 50
+      },
+      "duration_ms": 3.389500023331493,
+      "result_bytes": 5236,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "native-demo",
+        "event_id": "ev_2d44e6cf465951990539e9591793a72d",
+        "context": 1
+      },
+      "duration_ms": 1.578800001880154,
+      "result_bytes": 2089,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 1.2360999826341867,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

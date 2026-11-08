@@ -1,0 +1,185 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c011",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-be5a909ea0",
+  "run_id": "82cc77ea-22eb-4c53-aa7b-8616b9ba3d68",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:50.000631+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T14:10:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_2737aaeb1d24d268f3e5fc7e158b16d3"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:10:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_315ebf9760a98ae322514e7e008bb535"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:10:00.080000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_f1473efa7e6ba0a0b838b028c4272ee2"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:10:00.120000Z",
+      "text": "database: database connection pool exhausted; active=12 limit=12",
+      "evidence_ids": [
+        "ev_33186ab4d33041e39cff31bf9cbb86a8"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:10:00.160000Z",
+      "text": "worker: database connection unavailable; downstream request failed",
+      "evidence_ids": [
+        "ev_b5b240875bda7d9fa1299e5989b9eebc"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_2737aaeb1d24d268f3e5fc7e158b16d3"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_315ebf9760a98ae322514e7e008bb535"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_f1473efa7e6ba0a0b838b028c4272ee2"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "database logged ERROR: database connection pool exhausted; active=12 limit=12",
+      "evidence_ids": [
+        "ev_33186ab4d33041e39cff31bf9cbb86a8"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "worker logged ERROR: database connection unavailable; downstream request failed",
+      "evidence_ids": [
+        "ev_b5b240875bda7d9fa1299e5989b9eebc"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "Database connection or resource exhaustion likely caused downstream request failures.",
+      "status": "likely",
+      "supporting_observations": [
+        "obs-4"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_2737aaeb1d24d268f3e5fc7e158b16d3",
+      "source_id": "src_e9a76f3c9c8ad1b168bb4852",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_315ebf9760a98ae322514e7e008bb535",
+      "source_id": "src_e9a76f3c9c8ad1b168bb4852",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_f1473efa7e6ba0a0b838b028c4272ee2",
+      "source_id": "src_e9a76f3c9c8ad1b168bb4852",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_33186ab4d33041e39cff31bf9cbb86a8",
+      "source_id": "src_e9a76f3c9c8ad1b168bb4852",
+      "line_start": 4,
+      "line_end": 4
+    },
+    {
+      "event_id": "ev_b5b240875bda7d9fa1299e5989b9eebc",
+      "source_id": "src_e9a76f3c9c8ad1b168bb4852",
+      "line_start": 5,
+      "line_end": 5
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Measure database connection occupancy, pool limits and competing transactions."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c011",
+        "request_id": "req-be5a909ea0",
+        "limit": 50
+      },
+      "duration_ms": 86.08259999891743,
+      "result_bytes": 2980,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c011",
+        "event_id": "ev_2737aaeb1d24d268f3e5fc7e158b16d3",
+        "context": 1
+      },
+      "duration_ms": 3.881299984641373,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 2.0186000037938356,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

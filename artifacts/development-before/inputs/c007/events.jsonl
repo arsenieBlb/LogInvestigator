@@ -1,0 +1,5 @@
+{"attributes": {"route": "/jobs"}, "message": "request accepted", "request_id": "req-bfa3cb11c8", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T13:18:00+00:00", "version": "2026.01"}
+{"attributes": {"active": 2, "limit": 2}, "message": "database connection pool exhausted; active=2 limit=2", "request_id": "req-bfa3cb11c8", "service": "database", "severity": "ERROR", "timestamp": "2026-01-15T13:18:00.040000+00:00", "version": "2026.01"}
+{"attributes": {"status": 503}, "message": "database connection unavailable; downstream request failed", "request_id": "req-bfa3cb11c8", "service": "api", "severity": "ERROR", "timestamp": "2026-01-15T13:18:00.080000+00:00", "version": "2026.01"}
+{"attributes": {"active": 0}, "message": "connection released; pool capacity recovered", "request_id": "req-bfa3cb11c8", "service": "database", "severity": "INFO", "timestamp": "2026-01-15T13:18:00.120000+00:00", "version": "2026.01"}
+{"attributes": {"status": 200}, "message": "retry request completed", "request_id": "req-bfa3cb11c8", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T13:18:00.160000+00:00", "version": "2026.01"}

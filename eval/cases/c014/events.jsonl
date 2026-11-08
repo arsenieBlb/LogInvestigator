@@ -1,0 +1,6 @@
+{"attributes": {"route": "/jobs"}, "message": "request accepted", "request_id": "req-406254db64", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T14:49:00+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 23}, "message": "periodic telemetry flush", "request_id": "req-406254db64", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T14:49:00.040000+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 35}, "message": "periodic telemetry flush", "request_id": "req-406254db64", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T14:49:00.080000+00:00", "version": "2026.01"}
+{"attributes": {"dependency": "billing"}, "message": "dependency call started", "request_id": "req-406254db64", "service": "worker", "severity": "INFO", "timestamp": "2026-01-15T14:49:00.120000+00:00", "version": "2026.01"}
+{"attributes": {"duration_ms": 4}, "message": "server processing completed", "request_id": "req-406254db64", "service": "dependency", "severity": "INFO", "timestamp": "2026-01-15T14:49:00.160000+00:00", "version": "2026.01"}
+{"attributes": {"status": 504, "timeout_ms": 80}, "message": "request timeout waiting for dependency", "request_id": "req-406254db64", "service": "api", "severity": "ERROR", "timestamp": "2026-01-15T14:49:00.200000+00:00", "version": "2026.01"}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c014",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-406254db64",
+  "run_id": "7204b1dd-7629-48b5-a509-13625f66217f",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:54.187291+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T14:49:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_e6ab3c63c4bef0a21363d2404ab3286f"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:49:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_a016185525a9ebe9ccb7840e7749c1ea"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:49:00.080000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_87381aacf018061b025e000b14803607"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:49:00.120000Z",
+      "text": "worker: dependency call started",
+      "evidence_ids": [
+        "ev_c2fb3a7acbba82118f8e70b20bbd168a"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:49:00.160000Z",
+      "text": "dependency: server processing completed",
+      "evidence_ids": [
+        "ev_77f84f3f0b8cdf20603434b27c415a9e"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T14:49:00.200000Z",
+      "text": "api: request timeout waiting for dependency",
+      "evidence_ids": [
+        "ev_853f2e95ce8624968a5b666f0c6931b4"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_e6ab3c63c4bef0a21363d2404ab3286f"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_a016185525a9ebe9ccb7840e7749c1ea"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_87381aacf018061b025e000b14803607"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "worker logged INFO: dependency call started",
+      "evidence_ids": [
+        "ev_c2fb3a7acbba82118f8e70b20bbd168a"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "dependency logged INFO: server processing completed",
+      "evidence_ids": [
+        "ev_77f84f3f0b8cdf20603434b27c415a9e"
+      ]
+    },
+    {
+      "id": "obs-6",
+      "text": "api logged ERROR: request timeout waiting for dependency",
+      "evidence_ids": [
+        "ev_853f2e95ce8624968a5b666f0c6931b4"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "A slow dependency or timeout is observed, but its underlying cause cannot be established.",
+      "status": "insufficient_evidence",
+      "supporting_observations": [
+        "obs-6"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_e6ab3c63c4bef0a21363d2404ab3286f",
+      "source_id": "src_62b66dbcd2f7a64e251284e0",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_a016185525a9ebe9ccb7840e7749c1ea",
+      "source_id": "src_62b66dbcd2f7a64e251284e0",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_87381aacf018061b025e000b14803607",
+      "source_id": "src_62b66dbcd2f7a64e251284e0",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_c2fb3a7acbba82118f8e70b20bbd168a",
+      "source_id": "src_62b66dbcd2f7a64e251284e0",
+      "line_start": 4,
+      "line_end": 4
+    },
+    {
+      "event_id": "ev_77f84f3f0b8cdf20603434b27c415a9e",
+      "source_id": "src_62b66dbcd2f7a64e251284e0",
+      "line_start": 5,
+      "line_end": 5
+    },
+    {
+      "event_id": "ev_853f2e95ce8624968a5b666f0c6931b4",
+      "source_id": "src_62b66dbcd2f7a64e251284e0",
+      "line_start": 6,
+      "line_end": 6
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Dependency saturation, a network delay or a short timeout budget could produce similar symptoms.",
+    "Caller resource contention could also cause an apparent dependency timeout."
+  ],
+  "next_checks": [
+    "Compare dependency spans, timeout budgets, network latency and resource telemetry."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c014",
+        "request_id": "req-406254db64",
+        "limit": 50
+      },
+      "duration_ms": 9.102999989409,
+      "result_bytes": 3469,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c014",
+        "event_id": "ev_e6ab3c63c4bef0a21363d2404ab3286f",
+        "context": 1
+      },
+      "duration_ms": 4.279400018276647,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 3.6860000109300017,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

@@ -1,0 +1,167 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c004",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-3f7654e7c2",
+  "run_id": "7a3efa45-9a98-4875-be6c-ef9c1a9717fe",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:09.008026+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T12:39:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_ecc9f38c384410240fc1ffc9b574ce78"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:39:00.040000Z",
+      "text": "worker: dependency call started",
+      "evidence_ids": [
+        "ev_b1290f12165a787f200ec3f245b38684"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:39:00.080000Z",
+      "text": "api: request timeout waiting for dependency",
+      "evidence_ids": [
+        "ev_39fe5800a988b5dd75f5a53b4692302f"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:39:00.120000Z",
+      "text": "worker: dependency call completed after API deadline",
+      "evidence_ids": [
+        "ev_287850c1ae64ff83b7b6c60c0e3c5fe9"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_ecc9f38c384410240fc1ffc9b574ce78"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "worker logged INFO: dependency call started",
+      "evidence_ids": [
+        "ev_b1290f12165a787f200ec3f245b38684"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "api logged ERROR: request timeout waiting for dependency",
+      "evidence_ids": [
+        "ev_39fe5800a988b5dd75f5a53b4692302f"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "worker logged INFO: dependency call completed after API deadline",
+      "evidence_ids": [
+        "ev_287850c1ae64ff83b7b6c60c0e3c5fe9"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "A slow dependency or timeout is observed, but its underlying cause cannot be established.",
+      "status": "insufficient_evidence",
+      "supporting_observations": [
+        "obs-3",
+        "obs-4"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_ecc9f38c384410240fc1ffc9b574ce78",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_b1290f12165a787f200ec3f245b38684",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_39fe5800a988b5dd75f5a53b4692302f",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_287850c1ae64ff83b7b6c60c0e3c5fe9",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 4,
+      "line_end": 4
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Dependency saturation, a network delay or a short timeout budget could produce similar symptoms.",
+    "Caller resource contention could also cause an apparent dependency timeout."
+  ],
+  "next_checks": [
+    "Compare dependency spans, timeout budgets, network latency and resource telemetry."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c004",
+        "request_id": "req-3f7654e7c2",
+        "limit": 50
+      },
+      "duration_ms": 5.258899996988475,
+      "result_bytes": 2432,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c004",
+        "event_id": "ev_ecc9f38c384410240fc1ffc9b574ce78",
+        "context": 1
+      },
+      "duration_ms": 2.372899994952604,
+      "result_bytes": 1583,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 2.125800005160272,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": "1",
+  "warning": "Scorer only; never ingest or supply to investigator",
+  "cases": {
+    "c001": {
+      "acceptable_patterns": [
+        "pool|connection|resource|database"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Database pool saturation is directly recorded; its ultimate trigger is not established.",
+      "review_required": true
+    },
+    "c002": {
+      "acceptable_patterns": [
+        "retry|backlog|queue"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Worker queue or retry pressure is recorded; check arrival and consumption rates before attributing a trigger.",
+      "review_required": true
+    },
+    "c003": {
+      "acceptable_patterns": [
+        "mismatch|schema|configuration|version"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Incompatible API/worker schema versions are explicitly reported; deployment timing alone is not causal proof.",
+      "review_required": true
+    },
+    "c004": {
+      "acceptable_patterns": [
+        "timeout|slow|deadline|latency|uncertain"
+      ],
+      "uncertainty_required": true,
+      "acceptable_explanation": "A timeout is observed. Dependency delay, network delay, scheduling and clock effects remain alternatives.",
+      "review_required": true
+    },
+    "c005": {
+      "acceptable_patterns": [
+        "healthy|success|completed|no.*failure|no.*incident|harmless"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "The recorded request succeeds; noise alone does not establish a harmful incident.",
+      "review_required": true
+    },
+    "c006": {
+      "acceptable_patterns": [
+        "insufficient|unknown|uncertain|missing|cannot|not.*establish"
+      ],
+      "uncertainty_required": true,
+      "acceptable_explanation": "Request failure is recorded but the cause is not established by the available evidence.",
+      "review_required": true
+    },
+    "c007": {
+      "acceptable_patterns": [
+        "pool|connection|resource|database"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Database pool saturation is directly recorded; its ultimate trigger is not established.",
+      "review_required": true
+    },
+    "c008": {
+      "acceptable_patterns": [
+        "backlog|queue"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Worker queue or retry pressure is recorded; check arrival and consumption rates before attributing a trigger.",
+      "review_required": true
+    },
+    "c009": {
+      "acceptable_patterns": [
+        "mismatch|schema|configuration|version"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Incompatible API/worker schema versions are explicitly reported; deployment timing alone is not causal proof.",
+      "review_required": true
+    },
+    "c010": {
+      "acceptable_patterns": [
+        "healthy|success|completed|no.*failure|no.*incident|harmless"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "The recorded request succeeds; noise alone does not establish a harmful incident.",
+      "review_required": true
+    },
+    "c011": {
+      "acceptable_patterns": [
+        "pool|connection|resource|database"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Database pool saturation is directly recorded; its ultimate trigger is not established.",
+      "review_required": true
+    },
+    "c012": {
+      "acceptable_patterns": [
+        "retry|backlog|queue"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Worker queue or retry pressure is recorded; check arrival and consumption rates before attributing a trigger.",
+      "review_required": true
+    },
+    "c013": {
+      "acceptable_patterns": [
+        "mismatch|schema|configuration|version"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "Incompatible API/worker schema versions are explicitly reported; deployment timing alone is not causal proof.",
+      "review_required": true
+    },
+    "c014": {
+      "acceptable_patterns": [
+        "timeout|slow|deadline|latency|uncertain"
+      ],
+      "uncertainty_required": true,
+      "acceptable_explanation": "A timeout is observed. Dependency delay, network delay, scheduling and clock effects remain alternatives.",
+      "review_required": true
+    },
+    "c015": {
+      "acceptable_patterns": [
+        "healthy|success|completed|no.*failure|no.*incident|harmless"
+      ],
+      "uncertainty_required": false,
+      "acceptable_explanation": "The recorded request succeeds; noise alone does not establish a harmful incident.",
+      "review_required": true
+    },
+    "c016": {
+      "acceptable_patterns": [
+        "insufficient|unknown|uncertain|missing|cannot|not.*establish"
+      ],
+      "uncertainty_required": true,
+      "acceptable_explanation": "Request failure is recorded but the cause is not established by the available evidence.",
+      "review_required": true
+    }
+  }
+}

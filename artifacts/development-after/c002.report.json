@@ -1,0 +1,228 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c002",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-aecea99569",
+  "run_id": "29af1685-5857-4d25-b189-399fb5aa6f76",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:06.595232+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T12:13:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_10d287c55acfc318f70bd7b8e980cc10"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:13:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_aca48a7a10d01ea2ddd630a9ee151281"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:13:00.080000Z",
+      "text": "worker: job failed transiently; retry scheduled; queue backlog growing",
+      "evidence_ids": [
+        "ev_d1fcd577e38b7b129e443bf1a96ddb05"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:13:00.120000Z",
+      "text": "worker: job failed transiently; retry scheduled; queue backlog growing",
+      "evidence_ids": [
+        "ev_126fb2cdd56b1eb0ae14b55d7056ad6b"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:13:00.160000Z",
+      "text": "worker: job failed transiently; retry scheduled; queue backlog growing",
+      "evidence_ids": [
+        "ev_626c359b0d3ef919c3df8733dcbe1e80"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:13:00.200000Z",
+      "text": "worker: retry storm exhausted retry budget",
+      "evidence_ids": [
+        "ev_4e79e1d34d02574e31077a9fb3578320"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:13:00.240000Z",
+      "text": "api: request failed waiting for worker",
+      "evidence_ids": [
+        "ev_2209d15ce7a82f1df59e09dac25a3c94"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_10d287c55acfc318f70bd7b8e980cc10"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_aca48a7a10d01ea2ddd630a9ee151281"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "worker logged WARNING: job failed transiently; retry scheduled; queue backlog growing",
+      "evidence_ids": [
+        "ev_d1fcd577e38b7b129e443bf1a96ddb05"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "worker logged WARNING: job failed transiently; retry scheduled; queue backlog growing",
+      "evidence_ids": [
+        "ev_126fb2cdd56b1eb0ae14b55d7056ad6b"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "worker logged WARNING: job failed transiently; retry scheduled; queue backlog growing",
+      "evidence_ids": [
+        "ev_626c359b0d3ef919c3df8733dcbe1e80"
+      ]
+    },
+    {
+      "id": "obs-6",
+      "text": "worker logged ERROR: retry storm exhausted retry budget",
+      "evidence_ids": [
+        "ev_4e79e1d34d02574e31077a9fb3578320"
+      ]
+    },
+    {
+      "id": "obs-7",
+      "text": "api logged ERROR: request failed waiting for worker",
+      "evidence_ids": [
+        "ev_2209d15ce7a82f1df59e09dac25a3c94"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "A worker retry storm or backlog likely delayed request completion.",
+      "status": "likely",
+      "supporting_observations": [
+        "obs-3",
+        "obs-4",
+        "obs-5",
+        "obs-6"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_10d287c55acfc318f70bd7b8e980cc10",
+      "source_id": "src_2f39f6d1c120c8dbba96e52b",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_aca48a7a10d01ea2ddd630a9ee151281",
+      "source_id": "src_2f39f6d1c120c8dbba96e52b",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_d1fcd577e38b7b129e443bf1a96ddb05",
+      "source_id": "src_2f39f6d1c120c8dbba96e52b",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_126fb2cdd56b1eb0ae14b55d7056ad6b",
+      "source_id": "src_2f39f6d1c120c8dbba96e52b",
+      "line_start": 4,
+      "line_end": 4
+    },
+    {
+      "event_id": "ev_626c359b0d3ef919c3df8733dcbe1e80",
+      "source_id": "src_2f39f6d1c120c8dbba96e52b",
+      "line_start": 5,
+      "line_end": 5
+    },
+    {
+      "event_id": "ev_4e79e1d34d02574e31077a9fb3578320",
+      "source_id": "src_2f39f6d1c120c8dbba96e52b",
+      "line_start": 6,
+      "line_end": 6
+    },
+    {
+      "event_id": "ev_2209d15ce7a82f1df59e09dac25a3c94",
+      "source_id": "src_2f39f6d1c120c8dbba96e52b",
+      "line_start": 7,
+      "line_end": 7
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Inspect worker queue depth, retry policy, attempt rate and processing throughput."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c002",
+        "request_id": "req-aecea99569",
+        "limit": 50
+      },
+      "duration_ms": 4.283199989004061,
+      "result_bytes": 4116,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c002",
+        "event_id": "ev_10d287c55acfc318f70bd7b8e980cc10",
+        "context": 1
+      },
+      "duration_ms": 2.123500016750768,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 1.6534999886061996,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

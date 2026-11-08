@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling==1.29.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "log-investigator"
+version = "0.1.0"
+description = "Local, evidence-grounded incident investigations over MCP"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+dependencies = ["mcp==2.3.0", "pydantic==2.14.3", "httpx==0.28.1"]
+
+[project.scripts]
+log-investigator = "log_investigator.cli:main"
+
+[dependency-groups]
+dev = ["pytest==9.2.0", "pytest-asyncio==1.4.1.post1", "ruff==0.17.4", "mypy==2.4.1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/log_investigator"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+addopts = "--basetemp=.pytest_tmp"
+markers = ["services: exercises actual native API and worker processes", "replay: synthetic fixture replay, not live services", "mcp: real stdio MCP transport"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [".test_tmp", ".pytest_tmp", "artifacts"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src/log_investigator"]
+check_untyped_defs = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+

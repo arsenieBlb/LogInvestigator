@@ -1,0 +1,29 @@
+{
+  "case_id": "c001",
+  "mode": "live",
+  "stage": "report_evidence_validation",
+  "error_type": "InvestigationValidationError",
+  "error_code": "invalid_report_evidence",
+  "diagnostics": {
+    "run_id": "a24ab6e2-300d-4df1-ab5b-3e32f594447f",
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "input_tokens": 3985,
+      "output_tokens": 903,
+      "cost": 0.0019252,
+      "model_calls": 2
+    },
+    "tool_calls": [
+      {
+        "name": "trace_request",
+        "duration_ms": 67.95550000970252,
+        "result_bytes": 3499,
+        "error": null
+      }
+    ],
+    "limits_reached": [],
+    "error_code": "invalid_report_evidence"
+  },
+  "message": "Case failed before a validated report could be saved; raw exception text omitted"
+}

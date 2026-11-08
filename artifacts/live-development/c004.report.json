@@ -1,0 +1,168 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c004",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-3f7654e7c2",
+  "run_id": "d9adb880-8804-4f69-b1a1-0be162fb1e88",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:48.857456+00:00",
+  "mode": "live",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T12:39:00.000000Z",
+      "text": "API service accepted the request on route /jobs.",
+      "evidence_ids": [
+        "ev_ecc9f38c384410240fc1ffc9b574ce78"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:39:00.040000Z",
+      "text": "Worker service started a dependency call to billing service.",
+      "evidence_ids": [
+        "ev_b1290f12165a787f200ec3f245b38684"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:39:00.080000Z",
+      "text": "API service reported a request timeout waiting for dependency with status 504 after 80ms.",
+      "evidence_ids": [
+        "ev_39fe5800a988b5dd75f5a53b4692302f"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:39:00.120000Z",
+      "text": "Worker service completed the dependency call after the API deadline, taking 300ms.",
+      "evidence_ids": [
+        "ev_287850c1ae64ff83b7b6c60c0e3c5fe9"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs1",
+      "text": "The API request was accepted and routed to /jobs.",
+      "evidence_ids": [
+        "ev_ecc9f38c384410240fc1ffc9b574ce78"
+      ]
+    },
+    {
+      "id": "obs2",
+      "text": "The worker service initiated a billing dependency call shortly after request acceptance.",
+      "evidence_ids": [
+        "ev_b1290f12165a787f200ec3f245b38684"
+      ]
+    },
+    {
+      "id": "obs3",
+      "text": "The API service timed out waiting for the billing dependency after 80ms, returning a 504 error.",
+      "evidence_ids": [
+        "ev_39fe5800a988b5dd75f5a53b4692302f"
+      ]
+    },
+    {
+      "id": "obs4",
+      "text": "The billing dependency call completed successfully but only after 300ms, which is after the API timeout deadline.",
+      "evidence_ids": [
+        "ev_287850c1ae64ff83b7b6c60c0e3c5fe9"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "The observed request outcome (504 timeout) is explained by the billing dependency call exceeding the API service's timeout threshold.",
+      "status": "supported",
+      "supporting_observations": [
+        "obs3",
+        "obs4"
+      ],
+      "conflicting_observations": []
+    },
+    {
+      "statement": "The API service's timeout of 80ms was too short for the billing dependency call which took 300ms to complete.",
+      "status": "supported",
+      "supporting_observations": [
+        "obs3",
+        "obs4"
+      ],
+      "conflicting_observations": []
+    },
+    {
+      "statement": "There may be other uninstrumented services or network issues contributing to the delay and timeout.",
+      "status": "likely",
+      "supporting_observations": [
+        "obs3",
+        "obs4"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_ecc9f38c384410240fc1ffc9b574ce78",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_b1290f12165a787f200ec3f245b38684",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_39fe5800a988b5dd75f5a53b4692302f",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_287850c1ae64ff83b7b6c60c0e3c5fe9",
+      "source_id": "src_a9d198d498476bbde3c045b0",
+      "line_start": 4,
+      "line_end": 4
+    }
+  ],
+  "missing_evidence": [
+    "Logs or metrics from the billing service to explain why the dependency call took 300ms.",
+    "Network latency or error logs between worker and billing services.",
+    "Configuration details of API timeout settings and retry policies."
+  ],
+  "alternative_explanations": [
+    "Transient network issues causing delay in dependency call.",
+    "Resource contention or overload in billing service causing slow response.",
+    "Misconfiguration of timeout thresholds in API service."
+  ],
+  "next_checks": [
+    "Retrieve billing service logs for the time window around the request.",
+    "Check network monitoring data for latency or errors between worker and billing services.",
+    "Review API service timeout and retry configuration settings."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c004",
+        "limit": 50,
+        "request_id": "req-3f7654e7c2"
+      },
+      "duration_ms": 5.799200007459149,
+      "result_bytes": 2432,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "input_tokens": 3165,
+    "output_tokens": 1094,
+    "cost": 0.0030164,
+    "model_calls": 2
+  },
+  "limits_reached": [],
+  "errors": []
+}

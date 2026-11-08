@@ -1,0 +1,6 @@
+{"attributes": {"route": "/jobs"}, "message": "request accepted", "request_id": "req-3009d8cab1", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T12:00:00+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 21}, "message": "periodic telemetry flush", "request_id": "req-3009d8cab1", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T12:00:00.040000+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 13}, "message": "periodic telemetry flush", "request_id": "req-3009d8cab1", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T12:00:00.080000+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 34}, "message": "periodic telemetry flush", "request_id": "req-3009d8cab1", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T12:00:00.120000+00:00", "version": "2026.01"}
+{"attributes": {"active": 4, "limit": 4}, "message": "database connection pool exhausted; active=4 limit=4", "request_id": "req-3009d8cab1", "service": "database", "severity": "ERROR", "timestamp": "2026-01-15T12:00:00.160000+00:00", "version": "2026.01"}
+{"attributes": {"status": 503}, "message": "database connection unavailable; downstream request failed", "request_id": "req-3009d8cab1", "service": "api", "severity": "ERROR", "timestamp": "2026-01-15T12:00:00.200000+00:00", "version": "2026.01"}

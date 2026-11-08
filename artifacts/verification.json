@@ -1,0 +1,82 @@
+{
+  "verification_date": "2026-11-07",
+  "timezone": "Europe/Paris",
+  "scope": "Actual local runs; remote CI not executed",
+  "python": "3.12.10",
+  "sqlite": "3.49.1",
+  "dependencies": {
+    "mcp": "2.3.0",
+    "pydantic": "2.14.3",
+    "httpx": "0.28.1",
+    "pytest": "9.2.0",
+    "pytest-asyncio": "1.4.1.post1",
+    "ruff": "0.17.4",
+    "mypy": "2.4.1"
+  },
+  "checks": [
+    {
+      "command": "uv run pytest -q",
+      "result": "passed",
+      "tests": 45,
+      "seconds": 30.31,
+      "output": "artifacts/verification-tests.txt"
+    },
+    {
+      "command": "uv run ruff check .",
+      "result": "passed"
+    },
+    {
+      "command": "uv run ruff format --check .",
+      "result": "passed",
+      "files": 29
+    },
+    {
+      "command": "uv run mypy",
+      "result": "passed",
+      "core_files": 14
+    },
+    {
+      "command": "uv sync --locked",
+      "result": "passed"
+    },
+    {
+      "command": "uv build",
+      "result": "passed",
+      "outputs": [
+        "dist/log_investigator-0.1.0-py3-none-any.whl",
+        "dist/log_investigator-0.1.0.tar.gz"
+      ]
+    },
+    {
+      "command": "isolated wheel installation; ingest; investigate via actual MCP; validate",
+      "result": "passed",
+      "evidence_count": 3
+    },
+    {
+      "command": "native demo",
+      "result": "passed",
+      "http_statuses": [
+        200,
+        503,
+        502,
+        502,
+        504
+      ],
+      "events_accepted": 28,
+      "events_rejected": 0
+    },
+    {
+      "command": "local documentation links; generated schemas; secret containment check",
+      "result": "passed"
+    }
+  ],
+  "pending": [
+    "Independent human semantic review",
+    "Remote CI matrix",
+    "Local Python 3.13 and 3.14 execution"
+  ],
+  "known_limitations": [
+    "Original first rejected live development case has incomplete usage; later rejected outputs retain safe trace and supplied usage",
+    "Live reasoning can overclaim despite valid citations; see labelled AI implementer reviews"
+  ]
+}

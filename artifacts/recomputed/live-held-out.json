@@ -1,0 +1,123 @@
+{
+  "cases": [
+    {
+      "case_id": "c013",
+      "split": "held_out",
+      "status": "complete",
+      "ingest_summary": {
+        "dataset_id": "c013",
+        "source_id": "src_0c148a8cd252376eb03c5ce3",
+        "source_digest": "943cad5f5a67fdc9f76a17b81d4b06aaceb67ddfaf4c2fbedddc31b7ffede132",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 4,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": "8b3ad0f9-4390-417b-bf07-fddbca393eca",
+      "report_file": "c013.report.json",
+      "citation_validation_error": null,
+      "metrics": {
+        "diagnosis_match_proxy": true,
+        "supported_diagnosis_human": null,
+        "citation_validity": true,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": true,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "latency_seconds": 17.453,
+        "input_tokens": 5493,
+        "output_tokens": 1453,
+        "model_calls": 3,
+        "cost": 0.004522,
+        "partial": false,
+        "limits_reached": [],
+        "review_status": "pending_independent_human_review"
+      },
+      "semantic_review_samples": []
+    },
+    {
+      "case_id": "c014",
+      "split": "held_out",
+      "status": "complete",
+      "ingest_summary": {
+        "dataset_id": "c014",
+        "source_id": "src_62b66dbcd2f7a64e251284e0",
+        "source_digest": "61455468a1bc59937d498b273fc60afee55d3c621a0af8f3a539c7ba6804dcb8",
+        "source_name": "events.jsonl",
+        "parser_version": "jsonl-v1",
+        "accepted": 6,
+        "rejected": 0,
+        "rejection_reasons": {},
+        "rejections": [],
+        "rejection_details_truncated": false,
+        "already_ingested": false
+      },
+      "report_id": "22ac2102-bd46-44d0-9bf9-ddb787b7607c",
+      "report_file": "c014.report.json",
+      "citation_validation_error": null,
+      "metrics": {
+        "diagnosis_match_proxy": true,
+        "supported_diagnosis_human": null,
+        "citation_validity": true,
+        "unsupported_claims_human": null,
+        "appropriate_uncertainty_proxy": false,
+        "tool_errors": 0,
+        "provider_errors": 0,
+        "latency_seconds": 13.235,
+        "input_tokens": 6520,
+        "output_tokens": 1152,
+        "model_calls": 3,
+        "cost": 0.0039136,
+        "partial": false,
+        "limits_reached": [],
+        "review_status": "pending_independent_human_review"
+      },
+      "semantic_review_samples": []
+    }
+  ],
+  "summary": {
+    "case_count": 2,
+    "case_failures": 0,
+    "diagnosis_match_proxy_rate": 1.0,
+    "citation_validity_rate": 1.0,
+    "appropriate_uncertainty_proxy_rate": 0.5,
+    "supported_diagnosis_rate": null,
+    "unsupported_factual_claim_rate": null,
+    "semantic_reviews": {
+      "independent_human": {
+        "reviewed_cases": 0,
+        "total_cases": 2,
+        "coverage": 0.0,
+        "supported_diagnoses": 0,
+        "supported_diagnosis_rate": null,
+        "factual_claims_reviewed": 0,
+        "unsupported_factual_claims": 0,
+        "unsupported_factual_claim_rate": null
+      },
+      "ai_implementer": {
+        "reviewed_cases": 0,
+        "total_cases": 2,
+        "coverage": 0.0,
+        "supported_diagnoses": 0,
+        "supported_diagnosis_rate": null,
+        "factual_claims_reviewed": 0,
+        "unsupported_factual_claims": 0,
+        "unsupported_factual_claim_rate": null
+      }
+    },
+    "semantic_review_status": "Rates cover reviewed samples only; AI implementer and independent human annotations remain separate",
+    "tool_errors": 0,
+    "provider_errors": 0,
+    "evaluation_errors": 0,
+    "total_latency_seconds": 30.688,
+    "input_tokens": 12013,
+    "output_tokens": 2605,
+    "model_calls": 6,
+    "known_cost": 0.0084356,
+    "cost_complete": true
+  }
+}

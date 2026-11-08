@@ -1,0 +1,5 @@
+{"attributes": {"route": "/jobs"}, "message": "request accepted", "request_id": "req-be5a909ea0", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T14:10:00+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 27}, "message": "periodic telemetry flush", "request_id": "req-be5a909ea0", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T14:10:00.040000+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 29}, "message": "periodic telemetry flush", "request_id": "req-be5a909ea0", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T14:10:00.080000+00:00", "version": "2026.01"}
+{"attributes": {"active": 12, "limit": 12}, "message": "database connection pool exhausted; active=12 limit=12", "request_id": "req-be5a909ea0", "service": "database", "severity": "ERROR", "timestamp": "2026-01-15T14:10:00.120000+00:00", "version": "2026.01"}
+{"attributes": {"status": 503}, "message": "database connection unavailable; downstream request failed", "request_id": "req-be5a909ea0", "service": "worker", "severity": "ERROR", "timestamp": "2026-01-15T14:10:00.160000+00:00", "version": "2026.01"}

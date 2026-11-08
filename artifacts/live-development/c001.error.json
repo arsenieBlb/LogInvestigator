@@ -1,0 +1,7 @@
+{
+  "case_id": "c001",
+  "mode": "live",
+  "stage": "investigation",
+  "error_type": "ValueError",
+  "message": "Case failed before a validated report could be saved; raw exception text omitted"
+}

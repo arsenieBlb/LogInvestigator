@@ -1,0 +1,266 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c015",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-abf9d765f3",
+  "run_id": "d5227606-c958-4d86-aca8-13e1dc21a830",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:40:55.800061+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T15:02:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_fcafcf5fc4c200c7c61c27dec95bb975"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_a5d968a2a3d0c2edb34d61605e0cf9c5"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.080000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_b1324e92ce5a67088c18976d17cb3e0d"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.120000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_398a853ca80ffc1aab7e679af38209f4"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.160000Z",
+      "text": "worker: transient dependency failure; retry scheduled",
+      "evidence_ids": [
+        "ev_4e80309545eb911af28b6909b6457f83"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.200000Z",
+      "text": "worker: retry recovered and job completed",
+      "evidence_ids": [
+        "ev_4967a4a4a996aa04661e07ab238223f9"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.240000Z",
+      "text": "database: query completed",
+      "evidence_ids": [
+        "ev_0e0aa9a252ee2a8c7322761bd1493a8f"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.280000Z",
+      "text": "worker: job completed",
+      "evidence_ids": [
+        "ev_f58704e54a67a1352d5b623bae2e20c1"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T15:02:00.320000Z",
+      "text": "api: request completed successfully",
+      "evidence_ids": [
+        "ev_c7488befd1ddcdb4b872b7fac09da547"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_fcafcf5fc4c200c7c61c27dec95bb975"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_a5d968a2a3d0c2edb34d61605e0cf9c5"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_b1324e92ce5a67088c18976d17cb3e0d"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_398a853ca80ffc1aab7e679af38209f4"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "worker logged WARNING: transient dependency failure; retry scheduled",
+      "evidence_ids": [
+        "ev_4e80309545eb911af28b6909b6457f83"
+      ]
+    },
+    {
+      "id": "obs-6",
+      "text": "worker logged INFO: retry recovered and job completed",
+      "evidence_ids": [
+        "ev_4967a4a4a996aa04661e07ab238223f9"
+      ]
+    },
+    {
+      "id": "obs-7",
+      "text": "database logged INFO: query completed",
+      "evidence_ids": [
+        "ev_0e0aa9a252ee2a8c7322761bd1493a8f"
+      ]
+    },
+    {
+      "id": "obs-8",
+      "text": "worker logged INFO: job completed",
+      "evidence_ids": [
+        "ev_f58704e54a67a1352d5b623bae2e20c1"
+      ]
+    },
+    {
+      "id": "obs-9",
+      "text": "api logged INFO: request completed successfully",
+      "evidence_ids": [
+        "ev_c7488befd1ddcdb4b872b7fac09da547"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "Missing or incomplete evidence prevents establishing the incident cause.",
+      "status": "insufficient_evidence",
+      "supporting_observations": [
+        "obs-5"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_fcafcf5fc4c200c7c61c27dec95bb975",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_a5d968a2a3d0c2edb34d61605e0cf9c5",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_b1324e92ce5a67088c18976d17cb3e0d",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_398a853ca80ffc1aab7e679af38209f4",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 4,
+      "line_end": 4
+    },
+    {
+      "event_id": "ev_4e80309545eb911af28b6909b6457f83",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 5,
+      "line_end": 5
+    },
+    {
+      "event_id": "ev_4967a4a4a996aa04661e07ab238223f9",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 6,
+      "line_end": 6
+    },
+    {
+      "event_id": "ev_0e0aa9a252ee2a8c7322761bd1493a8f",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 7,
+      "line_end": 7
+    },
+    {
+      "event_id": "ev_f58704e54a67a1352d5b623bae2e20c1",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 8,
+      "line_end": 8
+    },
+    {
+      "event_id": "ev_c7488befd1ddcdb4b872b7fac09da547",
+      "source_id": "src_10a46da907bac5f1feb9db49",
+      "line_start": 9,
+      "line_end": 9
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history.",
+    "Upstream and downstream request segments or a direct failure signal are missing."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Collect missing request segments and dependency metrics before selecting a cause."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c015",
+        "request_id": "req-abf9d765f3",
+        "limit": 50
+      },
+      "duration_ms": 5.490700015798211,
+      "result_bytes": 5028,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c015",
+        "event_id": "ev_fcafcf5fc4c200c7c61c27dec95bb975",
+        "context": 1
+      },
+      "duration_ms": 1.8248000124003738,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 1.6434999997727573,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

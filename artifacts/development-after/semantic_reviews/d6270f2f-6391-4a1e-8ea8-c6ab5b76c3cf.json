@@ -1,0 +1,20 @@
+{
+  "schema_version": "1",
+  "review_id": "d6270f2f-6391-4a1e-8ea8-c6ab5b76c3cf",
+  "created_at": "2026-11-07T16:44:35.207393+00:00",
+  "report_id": "dfa466d5-a866-412a-aeed-b95859cbcd92",
+  "report_digest": "4f4b40f9ebd035ea2c8ed18c2776f904060ea5b38053f42357ef788e63426809",
+  "reviewer": "Codex AI implementer (not independent human)",
+  "reviewer_kind": "ai_implementer",
+  "diagnosis_supported": true,
+  "factual_claims": 6,
+  "unsupported_factual_claims": 0,
+  "notes": "Claim units: each observation and hypothesis is one reviewed unit; duplicate timeline paraphrases excluded. Corrected WARNING record now preserves queue_depth=700 and oldest_age=5000 evidence; backlog is appropriately likely, ultimate trigger unproven.",
+  "evidence_ids": [
+    "ev_d8026a40230cf3807b3192f06b8767f6",
+    "ev_2f1924dbfcb33dca21ca7dcf88233d1b",
+    "ev_98cd018366015a3a438439c2828fea67",
+    "ev_a6b3c0299afe7671302c6fc4bf552009",
+    "ev_d6ea067b81772db12140e91e5514ad02"
+  ]
+}

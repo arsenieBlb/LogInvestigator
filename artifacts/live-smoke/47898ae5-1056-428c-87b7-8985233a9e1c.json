@@ -1,0 +1,147 @@
+{
+  "schema_version": "1",
+  "dataset_id": "example",
+  "question": "Why did this request fail? Use tool evidence, distinguish observation and inferred cause.",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": null,
+  "run_id": "47898ae5-1056-428c-87b7-8985233a9e1c",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:38:22.302921+00:00",
+  "mode": "live",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T12:00:00.000000Z",
+      "text": "Request accepted by API service on route /jobs.",
+      "evidence_ids": [
+        "ev_761de1f10deec0c6b38d2aa07597217e"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:00:00.160000Z",
+      "text": "Database service reports connection pool exhausted; active connections equal to limit (4).",
+      "evidence_ids": [
+        "ev_9001cdc2e57e773238c91698da001b6e"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T12:00:00.200000Z",
+      "text": "API service logs error: database connection unavailable; downstream request failed with status 503.",
+      "evidence_ids": [
+        "ev_8074ebe8c8ad283c9872ce1fbb3b47c9"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs1",
+      "text": "The API request was accepted and processed initially.",
+      "evidence_ids": [
+        "ev_761de1f10deec0c6b38d2aa07597217e"
+      ]
+    },
+    {
+      "id": "obs2",
+      "text": "The database connection pool was exhausted at the time of the request, with active connections at the maximum limit of 4.",
+      "evidence_ids": [
+        "ev_9001cdc2e57e773238c91698da001b6e"
+      ]
+    },
+    {
+      "id": "obs3",
+      "text": "The API service failed the request due to unavailable database connection, returning a 503 error.",
+      "evidence_ids": [
+        "ev_8074ebe8c8ad283c9872ce1fbb3b47c9"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "The request failed because the database connection pool was exhausted, preventing the API from obtaining a database connection to fulfill the request.",
+      "status": "supported",
+      "supporting_observations": [
+        "obs2",
+        "obs3"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_761de1f10deec0c6b38d2aa07597217e",
+      "source_id": "src_f794014df352ce00cadbe2ac",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_540dc2ee0b0202a32a5145d27ed5b10f",
+      "source_id": "src_f794014df352ce00cadbe2ac",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_e92de39749ab86324a92b305c047d992",
+      "source_id": "src_f794014df352ce00cadbe2ac",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_17d3b712256fcb348d07459f54d43fe5",
+      "source_id": "src_f794014df352ce00cadbe2ac",
+      "line_start": 4,
+      "line_end": 4
+    },
+    {
+      "event_id": "ev_9001cdc2e57e773238c91698da001b6e",
+      "source_id": "src_f794014df352ce00cadbe2ac",
+      "line_start": 5,
+      "line_end": 5
+    },
+    {
+      "event_id": "ev_8074ebe8c8ad283c9872ce1fbb3b47c9",
+      "source_id": "src_f794014df352ce00cadbe2ac",
+      "line_start": 6,
+      "line_end": 6
+    }
+  ],
+  "missing_evidence": [
+    "Logs showing attempts to acquire database connections prior to exhaustion",
+    "Metrics on database connection pool usage trends"
+  ],
+  "alternative_explanations": [
+    "Transient network issues between API and database",
+    "Database service internal errors unrelated to connection pool"
+  ],
+  "next_checks": [
+    "Check database connection pool configuration and limits",
+    "Review database service logs for errors preceding connection pool exhaustion",
+    "Monitor connection pool usage over time to identify leaks or spikes"
+  ],
+  "tool_calls": [
+    {
+      "name": "search_logs",
+      "arguments": {
+        "dataset_id": "example",
+        "limit": 50,
+        "start": null,
+        "end": null
+      },
+      "duration_ms": 68.29789999756031,
+      "result_bytes": 3389,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "input_tokens": 3885,
+    "output_tokens": 723,
+    "cost": 0.0027108,
+    "model_calls": 2
+  },
+  "limits_reached": [],
+  "errors": []
+}

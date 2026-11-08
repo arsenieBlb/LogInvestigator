@@ -1,0 +1,210 @@
+{
+  "schema_version": "1",
+  "dataset_id": "c010",
+  "question": "What explains the observed request outcomes, and what remains uncertain?",
+  "time_window": {
+    "start": null,
+    "end": null
+  },
+  "request_id": "req-dcc60ddfc9",
+  "run_id": "09ded066-20b0-4421-af8e-f7dc0ae1266e",
+  "implementation_version": "0.1.0",
+  "created_at": "2026-11-07T16:36:45.356274+00:00",
+  "mode": "baseline",
+  "partial": false,
+  "timeline": [
+    {
+      "timestamp": "2026-01-15T13:57:00.000000Z",
+      "text": "api: request accepted",
+      "evidence_ids": [
+        "ev_af0c545f2419bdeacb1850386ff2739e"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T13:57:00.040000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_84cfad328e42b879758cc7ac37cda7d0"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T13:57:00.080000Z",
+      "text": "metrics: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_baf363b3d359aeff6051ab136f8692fc"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T13:57:00.160000Z",
+      "text": "database: query completed",
+      "evidence_ids": [
+        "ev_5bebb909d279b8a5eb076c603523c831"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T13:57:00.200000Z",
+      "text": "worker: job completed",
+      "evidence_ids": [
+        "ev_6a803899f3419ff030a28c71c8bd2a9a"
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T13:57:00.240000Z",
+      "text": "api: request completed successfully",
+      "evidence_ids": [
+        "ev_bf3e94d250adc7a30c1732546fadd800"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "text": "api logged INFO: request accepted",
+      "evidence_ids": [
+        "ev_af0c545f2419bdeacb1850386ff2739e"
+      ]
+    },
+    {
+      "id": "obs-2",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_84cfad328e42b879758cc7ac37cda7d0"
+      ]
+    },
+    {
+      "id": "obs-3",
+      "text": "metrics logged INFO: periodic telemetry flush",
+      "evidence_ids": [
+        "ev_baf363b3d359aeff6051ab136f8692fc"
+      ]
+    },
+    {
+      "id": "obs-4",
+      "text": "database logged INFO: query completed",
+      "evidence_ids": [
+        "ev_5bebb909d279b8a5eb076c603523c831"
+      ]
+    },
+    {
+      "id": "obs-5",
+      "text": "worker logged INFO: job completed",
+      "evidence_ids": [
+        "ev_6a803899f3419ff030a28c71c8bd2a9a"
+      ]
+    },
+    {
+      "id": "obs-6",
+      "text": "api logged INFO: request completed successfully",
+      "evidence_ids": [
+        "ev_bf3e94d250adc7a30c1732546fadd800"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "No failure is established in the available logs; observed requests appear healthy or harmless noise.",
+      "status": "supported",
+      "supporting_observations": [
+        "obs-1",
+        "obs-2",
+        "obs-3",
+        "obs-4",
+        "obs-5",
+        "obs-6"
+      ],
+      "conflicting_observations": []
+    }
+  ],
+  "evidence": [
+    {
+      "event_id": "ev_af0c545f2419bdeacb1850386ff2739e",
+      "source_id": "src_86872d0665b52a5a818b7f16",
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "event_id": "ev_84cfad328e42b879758cc7ac37cda7d0",
+      "source_id": "src_86872d0665b52a5a818b7f16",
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "event_id": "ev_baf363b3d359aeff6051ab136f8692fc",
+      "source_id": "src_86872d0665b52a5a818b7f16",
+      "line_start": 3,
+      "line_end": 3
+    },
+    {
+      "event_id": "ev_5bebb909d279b8a5eb076c603523c831",
+      "source_id": "src_86872d0665b52a5a818b7f16",
+      "line_start": 5,
+      "line_end": 5
+    },
+    {
+      "event_id": "ev_6a803899f3419ff030a28c71c8bd2a9a",
+      "source_id": "src_86872d0665b52a5a818b7f16",
+      "line_start": 6,
+      "line_end": 6
+    },
+    {
+      "event_id": "ev_bf3e94d250adc7a30c1732546fadd800",
+      "source_id": "src_86872d0665b52a5a818b7f16",
+      "line_start": 7,
+      "line_end": 7
+    }
+  ],
+  "missing_evidence": [
+    "Service clocks may differ; timestamps alone do not establish causal ordering.",
+    "Application logs do not provide a complete dependency or resource history."
+  ],
+  "alternative_explanations": [
+    "Other concurrent changes or unobserved dependencies may explain the same symptoms."
+  ],
+  "next_checks": [
+    "Check a wider window and client success metrics before concluding the whole system is healthy."
+  ],
+  "tool_calls": [
+    {
+      "name": "trace_request",
+      "arguments": {
+        "dataset_id": "c010",
+        "request_id": "req-dcc60ddfc9",
+        "limit": 50
+      },
+      "duration_ms": 0.0,
+      "result_bytes": 3395,
+      "error": null
+    },
+    {
+      "name": "get_event",
+      "arguments": {
+        "dataset_id": "c010",
+        "event_id": "ev_af0c545f2419bdeacb1850386ff2739e",
+        "context": 1
+      },
+      "duration_ms": 0.0,
+      "result_bytes": 1580,
+      "error": null
+    },
+    {
+      "name": "search_known_issues",
+      "arguments": {
+        "text": "timeout",
+        "limit": 5
+      },
+      "duration_ms": 0.0,
+      "result_bytes": 428,
+      "error": null
+    }
+  ],
+  "usage": {
+    "provider": "baseline",
+    "model": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost": null,
+    "model_calls": 0
+  },
+  "limits_reached": [],
+  "errors": []
+}

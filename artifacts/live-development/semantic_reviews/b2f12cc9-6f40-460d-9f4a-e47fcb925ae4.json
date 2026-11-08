@@ -1,0 +1,19 @@
+{
+  "schema_version": "1",
+  "review_id": "b2f12cc9-6f40-460d-9f4a-e47fcb925ae4",
+  "created_at": "2026-11-07T16:44:35.207393+00:00",
+  "report_id": "d9adb880-8804-4f69-b1a1-0be162fb1e88",
+  "report_digest": "153448ad01c4971f19f08d1b19b6fe668d7c41e2ea5895b5089e44585be64ce7",
+  "reviewer": "Codex AI implementer (not independent human)",
+  "reviewer_kind": "ai_implementer",
+  "diagnosis_supported": false,
+  "factual_claims": 7,
+  "unsupported_factual_claims": 2,
+  "notes": "Claim units: each observation and hypothesis is one reviewed unit; duplicate timeline paraphrases excluded. Observed timeout and 300ms completion are supported, but declaring timeout configuration too short and assigning likely network or uninstrumented causes is unsupported by these logs. Underlying cause should remain uncertain.",
+  "evidence_ids": [
+    "ev_ecc9f38c384410240fc1ffc9b574ce78",
+    "ev_b1290f12165a787f200ec3f245b38684",
+    "ev_39fe5800a988b5dd75f5a53b4692302f",
+    "ev_287850c1ae64ff83b7b6c60c0e3c5fe9"
+  ]
+}

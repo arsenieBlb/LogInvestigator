@@ -1,0 +1,4 @@
+{"attributes": {"route": "/jobs"}, "message": "request accepted", "request_id": "req-a90a5e13e5", "service": "api", "severity": "INFO", "timestamp": "2026-01-15T13:05:00+00:00", "version": "2026.01"}
+{"attributes": {"metric_count": 33}, "message": "periodic telemetry flush", "request_id": "req-a90a5e13e5", "service": "metrics", "severity": "INFO", "timestamp": "2026-01-15T13:05:00.040000+00:00", "version": "2026.01"}
+{"attributes": {"status": 502}, "message": "upstream request failed; diagnostic details unavailable", "request_id": "req-a90a5e13e5", "service": "api", "severity": "ERROR", "timestamp": "2026-01-15T13:05:00.080000+00:00", "version": "2026.01"}
+{"attributes": {"missing_service": "worker"}, "message": "worker segment missing: collection gap detected", "request_id": "req-a90a5e13e5", "service": "collector", "severity": "WARN", "timestamp": "2026-01-15T13:05:00.120000+00:00", "version": "2026.01"}
